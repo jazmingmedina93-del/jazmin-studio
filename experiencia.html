@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080810">
-<title>Experiencia profesional | Jazmin Gallardo Medina</title>
+<meta name="description" content="Trayectoria profesional de Jazmin Gallardo Medina.">
+<title>Experiencia | Jazmin Gallardo Medina</title>
 
 <style>
 :root {
   --bg: #080810;
   --text: #f7f5ff;
   --muted: #aaa6bb;
-  --purple: #a879ff;
-  --blue: #58c5ff;
-  --line: rgba(190,166,255,.17);
+  --purple: #ae83ff;
+  --blue: #65caff;
+  --line: rgba(190,166,255,.18);
   --gradient: linear-gradient(115deg,#b17aff,#7777ff 52%,#55c6ff);
-  --glow: 0 20px 70px rgba(111,64,190,.16);
 }
 
 * {
@@ -32,8 +32,8 @@ body {
   font-family: Inter, Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(ellipse at 78% 0%,rgba(130,73,205,.17),transparent 34%),
-    radial-gradient(ellipse at 0% 42%,rgba(55,129,210,.10),transparent 30%),
+    radial-gradient(ellipse at 78% 0%,rgba(130,73,205,.18),transparent 34%),
+    radial-gradient(ellipse at 0% 45%,rgba(55,129,210,.10),transparent 32%),
     var(--bg);
   line-height: 1.6;
   min-height: 100vh;
@@ -45,7 +45,7 @@ a {
 }
 
 .container {
-  width: min(1160px,88%);
+  width: min(1160px,90%);
   margin: auto;
 }
 
@@ -54,24 +54,24 @@ a {
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: rgba(8,8,16,.88);
-  backdrop-filter: blur(20px);
+  z-index: 20;
+  background: rgba(8,8,16,.86);
+  backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
 
 .nav-inner {
-  width: min(1160px,88%);
+  width: min(1160px,90%);
   margin: auto;
-  min-height: 76px;
+  min-height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .brand {
-  font-weight: 850;
   font-size: 21px;
+  font-weight: 850;
   letter-spacing: -.8px;
 }
 
@@ -85,7 +85,7 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 26px;
+  gap: 24px;
   list-style: none;
 }
 
@@ -118,8 +118,7 @@ a {
 /* ENCABEZADO */
 
 .page-shell {
-  padding: 75px 0 100px;
-  min-height: 75vh;
+  padding: 76px 0 100px;
 }
 
 .kicker {
@@ -127,11 +126,11 @@ a {
   align-items: center;
   gap: 9px;
   color: #c8aaff;
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  font-weight: 750;
-  margin-bottom: 22px;
+  font-weight: 800;
+  margin-bottom: 20px;
 }
 
 .kicker:before {
@@ -141,284 +140,424 @@ a {
   background: var(--purple);
 }
 
-.page-title {
+h1 {
   font-size: clamp(38px,6vw,68px);
-  letter-spacing: -2px;
-  line-height: 1.05;
+  letter-spacing: -2.8px;
+  line-height: 1.04;
   margin-bottom: 18px;
 }
 
-.page-intro {
+.intro {
   max-width: 760px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.9;
-  margin-bottom: 35px;
+  margin-bottom: 34px;
 }
 
 /* INDICADORES */
 
-.experience-kpis {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 14px;
-  margin-bottom: 30px;
-}
-
-.experience-kpi {
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: rgba(255,255,255,.025);
-}
-
-.experience-kpi strong {
-  display: block;
-  font-size: 25px;
-  color: #e9ddff;
-  line-height: 1.3;
-}
-
-.experience-kpi span {
-  display: block;
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 5px;
-}
-
-/* CARRUSEL */
-
-.experience-carousel {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: linear-gradient(
-    145deg,
-    rgba(35,31,55,.95),
-    rgba(17,17,29,.96)
-  );
-  box-shadow: var(--glow);
-}
-
-.experience-track {
+.summary {
   display: flex;
-  transition: transform .55s cubic-bezier(.2,.75,.25,1);
-  will-change: transform;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 54px;
 }
 
-.experience-slide {
-  min-width: 100%;
-  padding: clamp(22px,4vw,40px);
+.summary-card {
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.025);
+  min-width: 150px;
+}
+
+.summary-card strong {
+  display: block;
+  font-size: 19px;
+  color: #e4d6ff;
+}
+
+.summary-card span {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* ÁRBOL PROFESIONAL */
+
+.tree-wrap {
   position: relative;
-  overflow: hidden;
+  padding: 10px 0 25px;
 }
 
-.experience-slide:before {
+.tree-root {
+  position: relative;
+  z-index: 2;
+  width: min(430px,100%);
+  margin: 0 auto 64px;
+  padding: 22px 25px;
+  text-align: center;
+  border: 1px solid rgba(174,131,255,.38);
+  border-radius: 20px;
+  background: linear-gradient(135deg,rgba(44,32,70,.94),rgba(19,20,39,.96));
+  box-shadow: 0 15px 55px rgba(120,80,190,.18);
+}
+
+.root-orb {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--gradient);
+  color: #100d1b;
+  font-size: 22px;
+  box-shadow: 0 0 30px rgba(174,131,255,.3);
+}
+
+.tree-root h2 {
+  font-size: 19px;
+}
+
+.tree-root p {
+  font-size: 11px;
+  color: #c3b8d9;
+  margin-top: 4px;
+}
+
+.root-line {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(var(--purple),rgba(174,131,255,.3));
+}
+
+.branches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  position: relative;
+}
+
+.branches:before {
   content: "";
   position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  right: -100px;
-  top: -140px;
-  background: radial-gradient(
-    circle,
-    rgba(151,112,255,.19),
-    transparent 68%
-  );
-  pointer-events: none;
+  top: -30px;
+  left: 25%;
+  right: 25%;
+  height: 1px;
+  background: linear-gradient(90deg,rgba(174,131,255,.15),var(--purple),rgba(101,202,255,.4));
 }
 
-.experience-topline {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
+.branch {
   position: relative;
-  z-index: 1;
+  min-width: 0;
 }
 
-.experience-period {
-  font-size: 10px;
-  letter-spacing: 1.8px;
+.branch:before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  height: 30px;
+  width: 1px;
+  background: linear-gradient(var(--purple),rgba(174,131,255,.25));
+}
+
+/* TARJETAS DE EXPERIENCIA */
+
+.branch-card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(145deg,rgba(35,31,55,.92),rgba(15,16,29,.96));
+  box-shadow: 0 18px 55px rgba(0,0,0,.18);
+  transition: transform .25s,border-color .25s;
+}
+
+.branch-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(174,131,255,.48);
+}
+
+/* ILUSTRACIONES */
+
+.branch-visual {
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 75% 25%,rgba(145,105,220,.3),transparent 35%),
+    linear-gradient(135deg,#171629,#0b1421);
+  border-bottom: 1px solid var(--line);
+}
+
+.branch-visual.logistics {
+  background:
+    radial-gradient(circle at 75% 25%,rgba(79,171,212,.25),transparent 36%),
+    linear-gradient(135deg,#121c2b,#101421);
+}
+
+.visual-label {
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  font-size: 9px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: #c9aaff;
+  color: #d2c2ff;
   font-weight: 800;
 }
 
-.experience-sector {
-  font-size: 10px;
-  padding: 7px 12px;
-  border-radius: 30px;
-  border: 1px solid rgba(88,197,255,.25);
+.logistics .visual-label {
   color: #9bdcff;
-  background: rgba(88,197,255,.06);
 }
 
-.experience-heading {
+.visual-dashboard {
+  width: 76%;
+  height: 112px;
+  border: 1px solid rgba(210,190,255,.25);
+  border-radius: 12px;
+  background: rgba(9,10,22,.72);
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  transform: rotate(-3deg);
+  box-shadow: 0 12px 30px rgba(0,0,0,.3);
+}
+
+.mini-kpi {
+  border-radius: 6px;
+  background: rgba(166,123,255,.14);
+  padding: 7px;
+}
+
+.mini-kpi:before {
+  content: "";
+  display: block;
+  width: 55%;
+  height: 4px;
+  border-radius: 5px;
+  background: #a982ff;
+  margin-bottom: 9px;
+}
+
+.mini-kpi:after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 15px;
+  border-radius: 4px;
+  background: rgba(255,255,255,.12);
+}
+
+.mini-chart {
+  grid-column: 1/4;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  margin: 28px 0 10px;
-  position: relative;
-  z-index: 1;
+  align-items: end;
+  gap: 7px;
+  padding: 3px 8px;
 }
 
-.experience-heading h2 {
-  font-size: clamp(23px,3.5vw,36px);
-  letter-spacing: -1px;
-  line-height: 1.2;
+.mini-chart i {
+  display: block;
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(#b18aff,#5d69ce);
 }
 
-.experience-company {
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 9px;
+.mini-chart i:nth-child(1) {height:35%}
+.mini-chart i:nth-child(2) {height:65%}
+.mini-chart i:nth-child(3) {height:48%}
+.mini-chart i:nth-child(4) {height:85%}
+.mini-chart i:nth-child(5) {height:58%}
+.mini-chart i:nth-child(6) {height:100%}
+
+.logistics .mini-kpi {
+  background: rgba(88,197,255,.12);
+}
+
+.logistics .mini-kpi:before {
+  background: #68caff;
+}
+
+.logistics .mini-chart i {
+  background: linear-gradient(#69d1ff,#3976a7);
+}
+
+.visual-caption {
+  position: absolute;
+  bottom: 15px;
+  right: 18px;
+  font-size: 9px;
+  color: rgba(235,230,255,.6);
   letter-spacing: 1px;
-  font-weight: 600;
 }
 
-.experience-number {
-  font-size: clamp(50px,7vw,80px);
-  font-weight: 900;
-  line-height: 1;
-  color: rgba(196,164,255,.15);
-  letter-spacing: -4px;
+/* CONTENIDO DE LAS RAMAS */
+
+.branch-content {
+  padding: 23px;
 }
 
-.experience-summary {
-  max-width: 760px;
-  color: #c8c3d5;
-  font-size: 13px;
-  line-height: 1.9;
-  margin: 22px 0 28px;
-  position: relative;
-  z-index: 1;
-}
-
-/* RESPONSABILIDADES */
-
-.experience-achievements {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 13px;
-  position: relative;
-  z-index: 1;
-}
-
-.experience-achievement {
+.branch-top {
   display: flex;
-  align-items: flex-start;
-  gap: 13px;
-  padding: 17px;
-  border: 1px solid rgba(190,166,255,.13);
-  background: rgba(255,255,255,.025);
-  border-radius: 15px;
-  min-height: 95px;
-  transition: .25s;
-}
-
-.experience-achievement:hover {
-  transform: translateY(-4px);
-  border-color: rgba(168,121,255,.5);
-  background: rgba(168,121,255,.06);
-}
-
-.experience-check {
-  flex: 0 0 30px;
-  height: 30px;
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  background: rgba(168,121,255,.14);
-  color: #d1b5ff;
-  font-size: 14px;
-}
-
-.experience-achievement p {
-  font-size: 12px;
-  line-height: 1.8;
-  color: #d4d0df;
-}
-
-/* CONTROLES DEL CARRUSEL */
-
-.experience-controls {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 15px;
-  padding: 18px 25px;
-  border-top: 1px solid var(--line);
-  background: rgba(10,10,20,.35);
-}
-
-.experience-control-group {
-  display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
-.experience-arrow {
-  width: 40px;
-  height: 40px;
+.date {
+  font-size: 10px;
+  color: #c8aaff;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sector {
+  font-size: 9px;
+  padding: 6px 10px;
+  border: 1px solid rgba(101,202,255,.23);
+  border-radius: 20px;
+  color: #9bdcff;
+  background: rgba(101,202,255,.05);
+}
+
+.branch-content h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 15px 0 5px;
+  letter-spacing: -.5px;
+}
+
+.company {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .8px;
+  font-weight: 650;
+}
+
+.description {
+  font-size: 12px;
+  color: #c3bfd0;
+  line-height: 1.85;
+  margin: 14px 0 18px;
+}
+
+.tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0 0 20px;
+}
+
+.tool-tags span {
+  font-size: 9px;
+  color: #dbcaff;
+  background: rgba(168,121,255,.1);
+  border: 1px solid rgba(168,121,255,.17);
+  border-radius: 30px;
+  padding: 6px 9px;
+}
+
+.logistics-card .tool-tags span {
+  color: #b7e8ff;
+  background: rgba(88,197,255,.07);
+  border-color: rgba(88,197,255,.18);
+}
+
+/* DETALLES DESPLEGABLES */
+
+.details-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(255,255,255,.04);
-  color: #eee9ff;
+  background: rgba(255,255,255,.025);
+  color: #e8ddff;
+  padding: 12px 14px;
+  font-size: 11px;
+  font-weight: 750;
   cursor: pointer;
-  font-size: 22px;
   transition: .2s;
 }
 
-.experience-arrow:hover {
-  background: rgba(168,121,255,.16);
-  border-color: rgba(168,121,255,.5);
-  transform: translateY(-2px);
+.details-btn:hover {
+  background: rgba(168,121,255,.1);
+  border-color: rgba(168,121,255,.4);
 }
 
-.experience-count {
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 1px;
-  margin-left: 7px;
+.details-btn span:last-child {
+  font-size: 17px;
+  transition: transform .2s;
 }
 
-.experience-dots {
+.details-btn[aria-expanded="true"] span:last-child {
+  transform: rotate(180deg);
+}
+
+.details-panel {
+  display: none;
+  padding: 16px 2px 2px;
+}
+
+.details-panel.open {
+  display: block;
+  animation: fadeIn .3s ease;
+}
+
+.details-panel ul {
+  list-style: none;
+  display: grid;
+  gap: 11px;
+}
+
+.details-panel li {
   display: flex;
-  gap: 8px;
-  align-items: center;
+  gap: 10px;
+  color: #d0ccda;
+  font-size: 11px;
+  line-height: 1.75;
 }
 
-.experience-dot {
-  width: 9px;
-  height: 9px;
-  border: 0;
-  border-radius: 20px;
-  background: #514b64;
-  cursor: pointer;
-  transition: .25s;
+.details-panel li:before {
+  content: "✦";
+  color: var(--purple);
+  flex: 0 0 auto;
 }
 
-.experience-dot.active {
-  width: 27px;
-  background: var(--gradient);
+.logistics-card .details-panel li:before {
+  color: var(--blue);
 }
 
-.experience-hint {
-  font-size: 10px;
+.bottom-note {
+  text-align: center;
   color: var(--muted);
-  margin-top: 16px;
-  text-align: right;
+  font-size: 11px;
+  margin-top: 35px;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;transform:translateY(-5px)}
+  to {opacity:1;transform:translateY(0)}
 }
 
 /* PIE */
 
 footer {
-  padding: 28px 0;
+  padding: 27px 0;
   border-top: 1px solid var(--line);
   text-align: center;
   color: #777488;
@@ -426,11 +565,40 @@ footer {
   letter-spacing: .5px;
 }
 
-/* RESPONSIVE */
+/* ADAPTACIÓN A CELULARES */
 
-@media(max-width:900px) {
-  .experience-achievements {
+@media(max-width:760px) {
+  .branches {
     grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .branches:before {
+    left: 50%;
+    right: auto;
+    top: -30px;
+    height: calc(100% - 30px);
+    width: 1px;
+    background: linear-gradient(var(--purple),rgba(101,202,255,.25));
+  }
+
+  .branch:before {
+    left: 50%;
+    top: -30px;
+  }
+
+  .branch-card {
+    position: relative;
+    z-index: 1;
+  }
+
+  .tree-root {
+    margin-bottom: 58px;
+  }
+
+  .summary-card {
+    flex: 1;
+    min-width: 125px;
   }
 }
 
@@ -438,7 +606,7 @@ footer {
   .nav-links {
     display: none;
     position: absolute;
-    top: 76px;
+    top: 74px;
     left: 0;
     right: 0;
     padding: 20px 6%;
@@ -459,28 +627,16 @@ footer {
     padding: 48px 0 70px;
   }
 
-  .experience-kpis {
-    grid-template-columns: 1fr;
+  .branch-visual {
+    height: 160px;
   }
 
-  .experience-heading {
-    gap: 8px;
+  .branch-content {
+    padding: 19px;
   }
 
-  .experience-number {
-    font-size: 42px;
-  }
-
-  .experience-achievements {
-    grid-template-columns: 1fr;
-  }
-
-  .experience-controls {
-    padding: 13px;
-  }
-
-  .experience-hint {
-    text-align: left;
+  h1 {
+    letter-spacing: -1.7px;
   }
 }
 
@@ -492,6 +648,7 @@ footer {
   *,
   *:before,
   *:after {
+    animation: none !important;
     transition: none !important;
   }
 }
@@ -530,7 +687,7 @@ footer {
   </div>
 </header>
 
-<!-- CONTENIDO PRINCIPAL -->
+<!-- CONTENIDO -->
 
 <main class="container">
 
@@ -540,269 +697,314 @@ footer {
       04 / TRAYECTORIA
     </div>
 
-    <h1 class="page-title">
-      Experiencia
+    <h1>
+      Mi crecimiento
       <span class="gradient-text">profesional.</span>
     </h1>
 
-    <p class="page-intro">
-      Mi trayectoria en los sectores financiero y logístico,
-      combinando análisis de datos, Business Intelligence,
-      calidad de información y mejora de procesos.
+    <p class="intro">
+      Cada experiencia ha sido una etapa de aprendizaje.
+      Explora las ramas de mi trayectoria y conoce las herramientas,
+      responsabilidades y conocimientos que he desarrollado
+      en los sectores financiero y logístico.
     </p>
 
     <!-- INDICADORES -->
 
-    <div class="experience-kpis">
+    <div class="summary">
 
-      <div class="experience-kpi">
+      <div class="summary-card">
         <strong>+1.5 años</strong>
-        <span>De experiencia profesional</span>
+        <span>Experiencia profesional</span>
       </div>
 
-      <div class="experience-kpi">
+      <div class="summary-card">
         <strong>2 sectores</strong>
         <span>Financiero y logístico</span>
       </div>
 
-      <div class="experience-kpi">
-        <strong>BI + Datos</strong>
+      <div class="summary-card">
+        <strong>Datos + BI</strong>
         <span>Análisis y automatización</span>
       </div>
 
     </div>
 
-    <!-- CARRUSEL -->
+    <!-- ÁRBOL DE TRAYECTORIA -->
 
-    <section
-      class="experience-carousel"
-      id="experienceCarousel"
-      aria-label="Experiencia profesional">
+    <section class="tree-wrap" aria-label="Árbol de trayectoria profesional">
 
-      <div class="experience-track" id="experienceTrack">
+      <!-- RAÍZ DEL ÁRBOL -->
 
-        <!-- EXPERIENCIA 1: INCORP -->
+      <div class="tree-root">
 
-        <article class="experience-slide">
+        <div class="root-orb">✦</div>
 
-          <div class="experience-topline">
+        <h2>Jazmin Gallardo Medina</h2>
 
-            <span class="experience-period">
-              Mayo 2026 – Actualidad
-            </span>
+        <p>
+          Analista de Datos Jr. | Business Intelligence
+        </p>
 
-            <span class="experience-sector">
-              Business Intelligence · Financiero
-            </span>
-
-          </div>
-
-          <div class="experience-heading">
-
-            <div>
-              <h2>
-                Analista de Datos Jr. /
-                <br>
-                Business Intelligence (BI)
-              </h2>
-
-              <p class="experience-company">
-                INCORP
-              </p>
-            </div>
-
-            <span class="experience-number">01</span>
-
-          </div>
-
-          <p class="experience-summary">
-            Desarrollo de soluciones de información para el
-            seguimiento del negocio, integrando datos de distintas
-            fuentes, construyendo indicadores y automatizando
-            tareas operativas.
-          </p>
-
-          <div class="experience-achievements">
-
-            <div class="experience-achievement">
-              <span class="experience-check">↗</span>
-              <p>
-                Desarrollo y mantenimiento de dashboards ejecutivos
-                en ClicData, con KPIs para el seguimiento y análisis
-                del negocio.
-              </p>
-            </div>
-
-            <div class="experience-achievement">
-              <span class="experience-check">⌘</span>
-              <p>
-                Extracción, transformación y consolidación de
-                información de bases de datos, Excel y CSV mediante
-                SQL en PostgreSQL; consultas con JOIN, CTE y
-                funciones de ventana.
-              </p>
-            </div>
-
-            <div class="experience-achievement">
-              <span class="experience-check">▤</span>
-              <p>
-                Automatización de la extracción y procesamiento de
-                estados de cuenta bancarios en PDF mediante Python
-                y OCR; desarrollo de herramientas internas con
-                Streamlit.
-              </p>
-            </div>
-
-            <div class="experience-achievement">
-              <span class="experience-check">✉</span>
-              <p>
-                Automatización de tareas operativas en Excel con
-                VBA, incluyendo generación y envío de correos,
-                gestión de adjuntos y registro de estatus y fechas.
-              </p>
-            </div>
-
-            <div class="experience-achievement">
-              <span class="experience-check">✓</span>
-              <p>
-                Validación, depuración y control de calidad de datos;
-                elaboración de reportes históricos y mensuales para
-                identificar inconsistencias, variaciones y tendencias.
-              </p>
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- EXPERIENCIA 2: HELLMANN -->
-
-        <article class="experience-slide">
-
-          <div class="experience-topline">
-
-            <span class="experience-period">
-              Febrero 2025 – Mayo 2026
-            </span>
-
-            <span class="experience-sector">
-              Calidad · Logística
-            </span>
-
-          </div>
-
-          <div class="experience-heading">
-
-            <div>
-              <h2>
-                Analista de Datos
-                <br>
-                – Calidad
-              </h2>
-
-              <p class="experience-company">
-                HELLMANN WORLDWIDE LOGISTICS
-              </p>
-            </div>
-
-            <span class="experience-number">02</span>
-
-          </div>
-
-          <p class="experience-summary">
-            Análisis de información operativa y soporte a procesos
-            de auditoría, trazabilidad y mejora continua dentro de
-            las operaciones logísticas.
-          </p>
-
-          <div class="experience-achievements">
-
-            <div class="experience-achievement">
-              <span class="experience-check">▤</span>
-              <p>
-                Análisis de datos operativos y elaboración de
-                reportes e indicadores en Excel para identificar
-                tendencias, desviaciones y resultados de auditorías
-                internas.
-              </p>
-            </div>
-
-            <div class="experience-achievement">
-              <span class="experience-check">✓</span>
-              <p>
-                Diseño y administración de formularios en Google
-                Forms para el registro de auditorías, control de
-                hallazgos y seguimiento de acciones correctivas.
-              </p>
-            </div>
-
-            <div class="experience-achievement">
-              <span class="experience-check">◎</span>
-              <p>
-                Aplicación y seguimiento de metodologías 5S y 8D,
-                acciones correctivas y uso de sistemas WMS para
-                monitorear operaciones logísticas y trazabilidad.
-              </p>
-            </div>
-
-          </div>
-
-        </article>
+        <div class="root-line"></div>
 
       </div>
 
-      <!-- CONTROLES -->
+      <div class="branches">
 
-      <div class="experience-controls">
+        <!-- RAMA INCORP -->
 
-        <div class="experience-control-group">
+        <article class="branch">
 
-          <button
-            class="experience-arrow"
-            id="experiencePrev"
-            type="button"
-            aria-label="Experiencia anterior">
-            ‹
-          </button>
+          <div class="branch-card">
 
-          <button
-            class="experience-arrow"
-            id="experienceNext"
-            type="button"
-            aria-label="Siguiente experiencia">
-            ›
-          </button>
+            <div class="branch-visual">
 
-          <span class="experience-count" id="experienceCount">
-            01 / 02
-          </span>
+              <span class="visual-label">
+                Business Intelligence
+              </span>
 
-        </div>
+              <div class="visual-dashboard" aria-hidden="true">
 
-        <div class="experience-dots">
+                <div class="mini-kpi"></div>
+                <div class="mini-kpi"></div>
+                <div class="mini-kpi"></div>
 
-          <button
-            class="experience-dot active"
-            type="button"
-            data-slide="0"
-            aria-label="Ver experiencia en INCORP">
-          </button>
+                <div class="mini-chart">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
 
-          <button
-            class="experience-dot"
-            type="button"
-            data-slide="1"
-            aria-label="Ver experiencia en HELLMANN">
-          </button>
+              </div>
 
-        </div>
+              <span class="visual-caption">
+                DATA · REPORTING · AUTOMATION
+              </span>
+
+            </div>
+
+            <div class="branch-content">
+
+              <div class="branch-top">
+
+                <span class="date">
+                  Mayo 2026 – Actualidad
+                </span>
+
+                <span class="sector">
+                  Financiero
+                </span>
+
+              </div>
+
+              <h3>
+                Analista de Datos Jr. / BI
+              </h3>
+
+              <p class="company">
+                INCORP
+              </p>
+
+              <p class="description">
+                Desarrollo de soluciones de información para el
+                seguimiento del negocio, integrando datos de distintas
+                fuentes, construyendo indicadores y automatizando
+                tareas operativas.
+              </p>
+
+              <div class="tool-tags">
+                <span>SQL</span>
+                <span>PostgreSQL</span>
+                <span>ClicData</span>
+                <span>Power BI</span>
+                <span>Python</span>
+                <span>Excel VBA</span>
+              </div>
+
+              <button
+                class="details-btn"
+                type="button"
+                aria-expanded="false"
+                aria-controls="incorpDetails">
+
+                <span>Explorar responsabilidades</span>
+                <span>⌄</span>
+
+              </button>
+
+              <div class="details-panel" id="incorpDetails">
+
+                <ul>
+
+                  <li>
+                    Desarrollo y mantenimiento de dashboards ejecutivos
+                    en ClicData, con KPIs para el seguimiento y análisis
+                    del negocio.
+                  </li>
+
+                  <li>
+                    Extracción, transformación y consolidación de
+                    información de bases de datos, Excel y CSV mediante
+                    SQL en PostgreSQL; consultas con JOIN, CTE y
+                    funciones de ventana.
+                  </li>
+
+                  <li>
+                    Automatización de la extracción y procesamiento de
+                    estados de cuenta bancarios en PDF mediante Python
+                    y OCR; desarrollo de herramientas internas con
+                    Streamlit.
+                  </li>
+
+                  <li>
+                    Automatización de tareas operativas en Excel con
+                    VBA, incluyendo generación y envío de correos,
+                    gestión de adjuntos y registro de estatus y fechas.
+                  </li>
+
+                  <li>
+                    Validación, depuración y control de calidad de datos;
+                    elaboración de reportes históricos y mensuales para
+                    identificar inconsistencias, variaciones y tendencias.
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- RAMA HELLMANN -->
+
+        <article class="branch">
+
+          <div class="branch-card logistics-card">
+
+            <div class="branch-visual logistics">
+
+              <span class="visual-label">
+                Calidad y logística
+              </span>
+
+              <div class="visual-dashboard" aria-hidden="true">
+
+                <div class="mini-kpi"></div>
+                <div class="mini-kpi"></div>
+                <div class="mini-kpi"></div>
+
+                <div class="mini-chart">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
+
+              </div>
+
+              <span class="visual-caption">
+                QUALITY · AUDIT · TRACEABILITY
+              </span>
+
+            </div>
+
+            <div class="branch-content">
+
+              <div class="branch-top">
+
+                <span class="date">
+                  Febrero 2025 – Mayo 2026
+                </span>
+
+                <span class="sector">
+                  Logístico
+                </span>
+
+              </div>
+
+              <h3>
+                Analista de Datos – Calidad
+              </h3>
+
+              <p class="company">
+                HELLMANN WORLDWIDE LOGISTICS
+              </p>
+
+              <p class="description">
+                Análisis de información operativa y soporte a procesos
+                de auditoría, trazabilidad y mejora continua dentro de
+                las operaciones logísticas.
+              </p>
+
+              <div class="tool-tags">
+                <span>Excel</span>
+                <span>Google Forms</span>
+                <span>Auditorías</span>
+                <span>5S</span>
+                <span>8D</span>
+                <span>WMS</span>
+              </div>
+
+              <button
+                class="details-btn"
+                type="button"
+                aria-expanded="false"
+                aria-controls="hellmannDetails">
+
+                <span>Explorar responsabilidades</span>
+                <span>⌄</span>
+
+              </button>
+
+              <div class="details-panel" id="hellmannDetails">
+
+                <ul>
+
+                  <li>
+                    Análisis de datos operativos y elaboración de
+                    reportes e indicadores en Excel para identificar
+                    tendencias, desviaciones y resultados de auditorías
+                    internas.
+                  </li>
+
+                  <li>
+                    Diseño y administración de formularios en Google
+                    Forms para el registro de auditorías, control de
+                    hallazgos y seguimiento de acciones correctivas.
+                  </li>
+
+                  <li>
+                    Aplicación y seguimiento de metodologías 5S y 8D,
+                    acciones correctivas y uso de sistemas WMS para
+                    monitorear operaciones logísticas y trazabilidad.
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
 
       </div>
 
     </section>
 
-    <p class="experience-hint">
-      Utiliza las flechas para recorrer mi trayectoria profesional.
+    <p class="bottom-note">
+      Selecciona “Explorar responsabilidades” en cada rama
+      para conocer más detalles de mi experiencia.
     </p>
 
   </div>
@@ -813,7 +1015,7 @@ footer {
   © 2026 Jazmin Gallardo Medina · Data Analytics &amp; Business Intelligence
 </footer>
 
-<!-- FUNCIONES DEL CARRUSEL Y MENÚ -->
+<!-- FUNCIONES INTERACTIVAS -->
 
 <script>
 
@@ -839,60 +1041,28 @@ navLinks.querySelectorAll("a").forEach(link => {
 
 });
 
-const track = document.getElementById("experienceTrack");
+document.querySelectorAll(".details-btn").forEach(button => {
 
-const dots = [
-  ...document.querySelectorAll(".experience-dot")
-];
+  button.addEventListener("click", () => {
 
-const count = document.getElementById("experienceCount");
-
-let currentSlide = 0;
-
-function showExperience(index) {
-
-  currentSlide = (index + dots.length) % dots.length;
-
-  track.style.transform =
-    `translateX(-${currentSlide * 100}%)`;
-
-  dots.forEach((dot, i) => {
-
-    dot.classList.toggle(
-      "active",
-      i === currentSlide
+    const panel = document.getElementById(
+      button.getAttribute("aria-controls")
     );
 
-  });
+    const opened =
+      button.getAttribute("aria-expanded") === "true";
 
-  count.textContent =
-    `0${currentSlide + 1} / 0${dots.length}`;
-
-}
-
-document
-  .getElementById("experiencePrev")
-  .addEventListener("click", () => {
-
-    showExperience(currentSlide - 1);
-
-  });
-
-document
-  .getElementById("experienceNext")
-  .addEventListener("click", () => {
-
-    showExperience(currentSlide + 1);
-
-  });
-
-dots.forEach(dot => {
-
-  dot.addEventListener("click", () => {
-
-    showExperience(
-      Number(dot.dataset.slide)
+    button.setAttribute(
+      "aria-expanded",
+      String(!opened)
     );
+
+    panel.classList.toggle("open", !opened);
+
+    button.querySelector("span:first-child").textContent =
+      opened
+        ? "Explorar responsabilidades"
+        : "Ocultar responsabilidades";
 
   });
 
