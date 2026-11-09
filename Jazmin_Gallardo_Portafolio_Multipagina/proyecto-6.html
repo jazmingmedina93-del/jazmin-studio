@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#080810"><meta name="description" content="Análisis de clientes sin pago | Portafolio de Jazmin Gallardo"><title>Análisis de clientes sin pago | Jazmin Gallardo</title><style>
+:root{
+  --bg:#080810;--bg2:#0d0d18;--surface:rgba(24,23,39,.72);
+  --surface2:#171626;--line:rgba(190,166,255,.17);
+  --text:#f7f5ff;--muted:#aaa6bb;--purple:#a879ff;
+  --blue:#58c5ff;--pink:#d18cff;
+  --glow:0 20px 70px rgba(111,64,190,.16);
+  --gradient:linear-gradient(115deg,#b17aff 0%,#7777ff 52%,#55c6ff 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--text);background:
+  radial-gradient(ellipse at 78% 0%,rgba(130,73,205,.17),transparent 34%),
+  radial-gradient(ellipse at 0% 42%,rgba(55,129,210,.10),transparent 30%),var(--bg);
+  line-height:1.6;overflow-x:hidden
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1160px,88%);margin:auto}
+.navbar{position:sticky;top:0;z-index:50;background:rgba(8,8,16,.78);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.nav-inner{width:min(1160px,88%);margin:auto;min-height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:850;font-size:21px;letter-spacing:-.8px}
+.brand span,.gradient-text{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{font-size:12px;color:var(--muted);transition:.2s}
+.nav-links a:hover{color:white}
+.menu-toggle{display:none;background:transparent;border:1px solid var(--line);border-radius:10px;color:white;padding:8px 12px}
+.hero{min-height:680px;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:70px;padding:88px 0 105px}
+.kicker{display:inline-flex;align-items:center;gap:9px;color:#c8aaff;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:750;margin-bottom:22px}
+.kicker:before{content:"";width:25px;height:1px;background:var(--purple)}
+.hero h1{font-size:clamp(48px,7vw,88px);line-height:.98;letter-spacing:-4px;margin-bottom:22px}
+.hero h2{font-size:23px;font-weight:500;color:#d8d4e6;margin-bottom:17px}
+.hero-copy{max-width:620px;color:var(--muted);font-size:16px;line-height:1.9}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:12px;font-size:12px;font-weight:750;transition:.25s;border:1px solid transparent}
+.btn-primary{background:var(--gradient);color:#090812;box-shadow:0 8px 28px rgba(151,103,255,.22)}
+.btn-ghost{background:rgba(255,255,255,.035);border-color:var(--line);color:#eee9ff}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.1)}
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:440px}
+.orbit{position:absolute;width:390px;height:390px;border:1px solid rgba(172,132,255,.19);border-radius:50%;box-shadow:0 0 80px rgba(140,89,255,.08),inset 0 0 70px rgba(140,89,255,.04)}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(89,184,255,.14);border-radius:50%;inset:24px}
+.orbit:after{inset:52px;border-color:rgba(196,145,255,.13)}
+.photo-card{position:relative;width:285px;height:365px;padding:5px;border-radius:28px;background:linear-gradient(145deg,#c18aff,#676bdb 52%,#52c9ff);box-shadow:0 25px 85px rgba(107,76,177,.28);transform:rotate(2deg)}
+.photo-card img{width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:24px;display:block}
+.photo-label{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(13,12,24,.86);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:30px;padding:9px 15px;font-size:10px;letter-spacing:1px;color:#e9dcff}
+.float-chip{position:absolute;background:rgba(24,23,39,.85);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:13px;padding:11px 14px;box-shadow:var(--glow);font-size:11px;color:#e8e2fa}
+.chip-one{top:45px;right:0}.chip-two{bottom:52px;left:0}
+.section{padding:88px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+.section-index{color:var(--purple);font-size:10px;letter-spacing:2.5px;font-weight:800;margin-bottom:9px}
+.section-head h2{font-size:clamp(29px,4vw,42px);letter-spacing:-1.5px;line-height:1.1}
+.section-head p{max-width:520px;color:var(--muted);font-size:13px;line-height:1.8}
+.glass{background:linear-gradient(145deg,rgba(35,31,55,.82),rgba(17,17,29,.83));border:1px solid var(--line);border-radius:20px;box-shadow:var(--glow);backdrop-filter:blur(18px)}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.about-card{padding:29px}
+.about-card h3{font-size:17px;margin-bottom:13px}
+.about-card p{color:var(--muted);font-size:13px;line-height:1.95}
+.focus-list{display:grid;gap:13px;margin-top:8px}
+.focus-item{display:flex;gap:12px;align-items:center;color:#e6e0f3;font-size:12px}
+.focus-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:rgba(166,120,255,.13);color:#c5a4ff;border:1px solid var(--line);font-size:15px}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.skill-card{padding:21px;min-height:150px;transition:.25s}
+.skill-card:hover,.project-card:hover{transform:translateY(-5px);border-color:rgba(174,130,255,.48);box-shadow:0 24px 65px rgba(120,79,190,.18)}
+.skill-symbol{font-size:22px;color:#c39aff;margin-bottom:12px}
+.skill-card h3{font-size:13px;margin-bottom:8px}
+.skill-card p{font-size:11px;color:var(--muted);line-height:1.8}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.project-card{overflow:hidden;transition:.28s}
+.project-visual{height:205px;position:relative;overflow:hidden;background:
+ radial-gradient(circle at 75% 25%,rgba(112,83,196,.35),transparent 35%),
+ linear-gradient(135deg,#171629,#0c1321);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+.project-visual:before{content:"";position:absolute;inset:16px;border:1px solid rgba(185,156,255,.12);border-radius:13px}
+.visual-placeholder{position:relative;text-align:center;color:#bba7e7;font-size:11px;letter-spacing:1px;padding:20px}
+.visual-placeholder strong{display:block;font-size:34px;line-height:1.3;color:#d8c5ff;margin-bottom:7px}
+.project-content{padding:23px}
+.project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.project-no{font-size:9px;letter-spacing:2px;color:#bca0ff;font-weight:800}
+.project-type{font-size:9px;color:#8fcfff;border:1px solid rgba(88,197,255,.22);border-radius:30px;padding:5px 9px}
+.project-card h3{font-size:18px;margin-bottom:9px}
+.project-card p{color:var(--muted);font-size:12px;line-height:1.85}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.tag{font-size:9px;color:#d8c7ff;background:rgba(165,122,255,.10);border:1px solid rgba(165,122,255,.16);padding:6px 9px;border-radius:30px}
+.project-note{font-size:10px;color:#8d89a0;margin-top:14px}
+.timeline{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.timeline-card{padding:23px;position:relative}
+.timeline-card h3{font-size:15px;margin-bottom:8px}
+.timeline-card p{font-size:12px;color:var(--muted);line-height:1.85}
+.timeline-dot{width:8px;height:8px;background:var(--purple);box-shadow:0 0 14px var(--purple);border-radius:50%;margin-bottom:15px}
+.cv-card{padding:34px;display:flex;align-items:center;justify-content:space-between;gap:25px;background:radial-gradient(circle at 85% 10%,rgba(153,103,255,.19),transparent 35%),linear-gradient(120deg,#211933,#111522)}
+.cv-card h3{font-size:23px;margin-bottom:7px}
+.cv-card p{color:var(--muted);font-size:12px;line-height:1.8}
+.cv-status{font-size:10px;color:#c6a8ff;margin-top:10px}
+.contact-card{padding:35px;background:radial-gradient(circle at 100% 0%,rgba(87,158,255,.12),transparent 35%),var(--surface)}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:23px}
+.contact-link{display:block;padding:15px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid var(--line);font-size:12px;overflow-wrap:anywhere}
+.contact-link span{display:block;color:var(--muted);font-size:10px;margin-bottom:5px}
+.contact-link strong{font-weight:600;color:#d9c5ff}
+footer{padding:28px 0;border-top:1px solid var(--line);text-align:center;color:#777488;font-size:10px;letter-spacing:.5px}
+.reveal{opacity:1;transform:none}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.hero{gap:30px}.skills-grid{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{margin-top:12px}.orbit{width:330px;height:330px}}
+@media(max-width:680px){
+ .nav-links{display:none;position:absolute;top:76px;left:0;right:0;padding:20px 6%;background:#0d0c18;border-bottom:1px solid var(--line);flex-direction:column}
+ .nav-links.open{display:flex}.menu-toggle{display:block}
+ .hero{grid-template-columns:1fr;text-align:center;padding:60px 0 75px;gap:35px}
+ .hero-visual{grid-row:1;min-height:370px}.photo-card{width:230px;height:300px}
+ .orbit{width:290px;height:290px}.hero h1{letter-spacing:-2.5px}.hero-copy{font-size:14px}.kicker{justify-content:center}
+ .actions{justify-content:center}.about-grid,.projects-grid,.timeline{grid-template-columns:1fr}
+ .skills-grid{grid-template-columns:repeat(2,1fr)}.section{padding:65px 0}
+ .cv-card{display:block;padding:25px}.cv-card .btn{margin-top:20px}
+ .contact-grid{grid-template-columns:1fr}.contact-card{padding:25px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+
+.page-shell{padding:70px 0 100px;min-height:70vh}
+.page-title{font-size:clamp(38px,6vw,64px);letter-spacing:-2px;line-height:1.05;margin:12px 0 18px}
+.page-intro{max-width:720px;color:var(--muted);font-size:15px;line-height:1.9;margin-bottom:34px}
+.nav-links a.active{color:#fff;border-bottom:1px solid var(--purple);padding-bottom:7px}
+.project-link{display:inline-flex;margin-top:17px;color:#c9aaff;font-size:11px;font-weight:800}
+.project-link:hover{color:white}
+@media(max-width:680px){.page-shell{padding:48px 0 70px}}
+</style></head><body>
+<header class="navbar"><div class="nav-inner"><a class="brand" href="index.html">JAZMIN<span>.</span></a><button class="menu-toggle" id="menuToggle" aria-expanded="false">Menú ☰</button><ul class="nav-links" id="navLinks"><li><a class="" href="index.html">Inicio</a></li><li><a class="" href="sobre-mi.html">Sobre mí</a></li><li><a class="" href="habilidades.html">Habilidades</a></li><li><a class="active" href="proyectos.html">Proyectos</a></li><li><a class="" href="experiencia.html">Experiencia</a></li><li><a class="" href="curriculum.html">CV</a></li><li><a class="" href="contacto.html">Contacto</a></li></ul></div></header>
+<main class="container"><div class="page-shell"><div class="kicker">DETALLE DE PROYECTO</div><h1 class="page-title">Análisis de clientes sin pago</h1><p class="page-intro">Descripción general del trabajo y las herramientas utilizadas.</p><article class="glass about-card"><div class="section-index">PROYECTO 06</div><h2>Análisis de clientes sin pago</h2><p>Consultas y cruces de información para identificar clientes sin registro de pago en determinados periodos.</p><div class="tags"><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">Análisis</span></div><p class="project-note">Evidencia visual pendiente de incorporar.</p><a class="project-link" href="proyectos.html">← Volver a proyectos</a></article></div></main><footer>© 2026 Jazmin Gallardo · Data Analytics &amp; Business Intelligence</footer>
+<script>const b=document.getElementById('menuToggle'),n=document.getElementById('navLinks');b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>n.classList.remove('open')));</script></body></html>
