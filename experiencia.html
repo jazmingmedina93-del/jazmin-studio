@@ -3,19 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080810">
-<meta name="description" content="Trayectoria profesional de Jazmin Gallardo Medina.">
-<title>Experiencia | Jazmin Gallardo Medina</title>
+<title>Experiencia | Jazmin Gallardo</title>
 
 <style>
 :root {
   --bg: #080810;
-  --text: #f7f5ff;
-  --muted: #aaa6bb;
-  --purple: #ae83ff;
-  --blue: #65caff;
-  --line: rgba(190,166,255,.18);
-  --gradient: linear-gradient(115deg,#b17aff,#7777ff 52%,#55c6ff);
+  --panel: #151329;
+  --purple: #b66cff;
+  --blue: #55caff;
+  --text: #f7f4ff;
+  --muted: #b9b4ca;
+  --line: rgba(183,132,255,.35);
 }
 
 * {
@@ -24,18 +22,13 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: Inter, Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(ellipse at 78% 0%,rgba(130,73,205,.18),transparent 34%),
-    radial-gradient(ellipse at 0% 45%,rgba(55,129,210,.10),transparent 32%),
+    radial-gradient(ellipse at 15% 35%,rgba(104,45,190,.17),transparent 35%),
+    radial-gradient(ellipse at 90% 70%,rgba(35,120,200,.13),transparent 35%),
     var(--bg);
-  line-height: 1.6;
   min-height: 100vh;
 }
 
@@ -45,573 +38,715 @@ a {
 }
 
 .container {
-  width: min(1160px,90%);
+  width: min(1450px,94%);
   margin: auto;
 }
 
 /* NAVEGACIÓN */
 
 .navbar {
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  background: rgba(8,8,16,.88);
+  backdrop-filter: blur(18px);
   position: sticky;
   top: 0;
-  z-index: 20;
-  background: rgba(8,8,16,.86);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--line);
+  z-index: 10;
 }
 
 .nav-inner {
-  width: min(1160px,90%);
+  width: min(1450px,94%);
   margin: auto;
-  min-height: 74px;
+  min-height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .brand {
-  font-size: 21px;
-  font-weight: 850;
-  letter-spacing: -.8px;
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -1px;
 }
 
-.brand span,
-.gradient-text {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.brand span {
+  color: #7e8aff;
 }
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   list-style: none;
 }
 
 .nav-links a {
-  font-size: 12px;
-  color: var(--muted);
-  transition: .2s;
+  color: #c8c4d8;
+  font-size: 13px;
+  padding-bottom: 8px;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: white;
-}
-
-.nav-links a.active {
-  border-bottom: 1px solid var(--purple);
-  padding-bottom: 7px;
+  border-bottom: 2px solid var(--purple);
 }
 
 .menu-toggle {
   display: none;
   background: transparent;
   border: 1px solid var(--line);
-  border-radius: 10px;
   color: white;
+  border-radius: 9px;
   padding: 8px 12px;
-  cursor: pointer;
 }
 
 /* ENCABEZADO */
 
-.page-shell {
-  padding: 76px 0 100px;
+main {
+  padding: 38px 0 70px;
+}
+
+.header-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 35px;
+  align-items: center;
+  margin-bottom: 35px;
 }
 
 .kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  color: #c8aaff;
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
+  color: var(--purple);
+  font-size: 11px;
+  letter-spacing: 3px;
   font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.kicker:before {
-  content: "";
-  width: 25px;
-  height: 1px;
-  background: var(--purple);
+  margin-bottom: 13px;
 }
 
 h1 {
-  font-size: clamp(38px,6vw,68px);
-  letter-spacing: -2.8px;
-  line-height: 1.04;
-  margin-bottom: 18px;
+  font-size: clamp(35px,4.2vw,58px);
+  line-height: 1.06;
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+
+.gradient-text {
+  background: linear-gradient(100deg,#b56aff,#7e83ff,#55caff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .intro {
-  max-width: 760px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.9;
-  margin-bottom: 34px;
+  color: #c5c0d2;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 680px;
 }
 
 /* INDICADORES */
 
-.summary {
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+
+.stat {
+  min-height: 135px;
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 54px;
-}
-
-.summary-card {
-  padding: 14px 18px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(255,255,255,.025);
-  min-width: 150px;
-}
-
-.summary-card strong {
-  display: block;
-  font-size: 19px;
-  color: #e4d6ff;
-}
-
-.summary-card span {
-  font-size: 10px;
-  color: var(--muted);
-}
-
-/* ÁRBOL PROFESIONAL */
-
-.tree-wrap {
-  position: relative;
-  padding: 10px 0 25px;
-}
-
-.tree-root {
-  position: relative;
-  z-index: 2;
-  width: min(430px,100%);
-  margin: 0 auto 64px;
-  padding: 22px 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  border: 1px solid rgba(174,131,255,.38);
-  border-radius: 20px;
-  background: linear-gradient(135deg,rgba(44,32,70,.94),rgba(19,20,39,.96));
-  box-shadow: 0 15px 55px rgba(120,80,190,.18);
-}
-
-.root-orb {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 10px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--gradient);
-  color: #100d1b;
-  font-size: 22px;
-  box-shadow: 0 0 30px rgba(174,131,255,.3);
-}
-
-.tree-root h2 {
-  font-size: 19px;
-}
-
-.tree-root p {
-  font-size: 11px;
-  color: #c3b8d9;
-  margin-top: 4px;
-}
-
-.root-line {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  width: 1px;
-  height: 34px;
-  background: linear-gradient(var(--purple),rgba(174,131,255,.3));
-}
-
-.branches {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  position: relative;
-}
-
-.branches:before {
-  content: "";
-  position: absolute;
-  top: -30px;
-  left: 25%;
-  right: 25%;
-  height: 1px;
-  background: linear-gradient(90deg,rgba(174,131,255,.15),var(--purple),rgba(101,202,255,.4));
-}
-
-.branch {
-  position: relative;
-  min-width: 0;
-}
-
-.branch:before {
-  content: "";
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  height: 30px;
-  width: 1px;
-  background: linear-gradient(var(--purple),rgba(174,131,255,.25));
-}
-
-/* TARJETAS DE EXPERIENCIA */
-
-.branch-card {
-  height: 100%;
-  overflow: hidden;
+  padding: 15px 10px;
   border: 1px solid var(--line);
   border-radius: 22px;
-  background: linear-gradient(145deg,rgba(35,31,55,.92),rgba(15,16,29,.96));
-  box-shadow: 0 18px 55px rgba(0,0,0,.18);
-  transition: transform .25s,border-color .25s;
+  background: linear-gradient(145deg,rgba(48,31,79,.7),rgba(15,17,39,.9));
+  box-shadow: 0 10px 35px rgba(0,0,0,.25);
 }
 
-.branch-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(174,131,255,.48);
+.stat-icon {
+  font-size: 29px;
+  color: var(--purple);
+  margin-bottom: 7px;
 }
 
-/* ILUSTRACIONES */
+.stat strong {
+  font-size: 23px;
+}
 
-.branch-visual {
-  height: 190px;
+.stat span:last-child {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* CARRUSEL */
+
+.carousel-area {
+  position: relative;
+  padding: 12px 45px 0;
+}
+
+.carousel-window {
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform .65s cubic-bezier(.22,.8,.25,1);
+}
+
+.experience-card {
+  flex: 0 0 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 38% 62%;
+  min-height: 455px;
+  border: 1px solid rgba(190,135,255,.8);
+  border-radius: 27px;
+  overflow: hidden;
+  background: linear-gradient(130deg,#17132e,#101426 65%,#101b32);
+  box-shadow:
+    0 0 25px rgba(172,80,255,.22),
+    0 20px 60px rgba(0,0,0,.35);
+}
+
+/* IMAGEN / ILUSTRACIÓN DE EMPRESA */
+
+.visual {
+  min-height: 455px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(circle at 75% 25%,rgba(145,105,220,.3),transparent 35%),
-    linear-gradient(135deg,#171629,#0b1421);
-  border-bottom: 1px solid var(--line);
+    radial-gradient(circle at 50% 35%,rgba(183,76,255,.65),transparent 42%),
+    linear-gradient(145deg,#28124b,#10152c 75%);
 }
 
-.branch-visual.logistics {
+.visual.hellmann {
   background:
-    radial-gradient(circle at 75% 25%,rgba(79,171,212,.25),transparent 36%),
-    linear-gradient(135deg,#121c2b,#101421);
+    radial-gradient(circle at 50% 35%,rgba(44,165,230,.45),transparent 42%),
+    linear-gradient(145deg,#102d46,#101528 75%);
+}
+
+.visual:before,
+.visual:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.visual:before {
+  width: 310px;
+  height: 310px;
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 0 60px rgba(180,80,255,.2);
+}
+
+.visual:after {
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(255,255,255,.12);
 }
 
 .visual-label {
   position: absolute;
-  left: 18px;
-  top: 16px;
-  font-size: 9px;
+  top: 22px;
+  left: 22px;
+  z-index: 2;
+  font-size: 10px;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #d2c2ff;
+  color: #e3c7ff;
   font-weight: 800;
+  text-transform: uppercase;
 }
 
-.logistics .visual-label {
-  color: #9bdcff;
+.hellmann .visual-label {
+  color: #a7e5ff;
 }
 
-.visual-dashboard {
-  width: 76%;
-  height: 112px;
-  border: 1px solid rgba(210,190,255,.25);
-  border-radius: 12px;
-  background: rgba(9,10,22,.72);
-  padding: 12px;
+/* PANTALLA ILUSTRADA */
+
+.screen {
+  z-index: 1;
+  width: 78%;
+  height: 260px;
+  padding: 15px;
+  border: 5px solid #25223c;
+  border-radius: 15px;
+  background: #090d1c;
+  box-shadow: 0 20px 55px rgba(0,0,0,.6);
+  transform: rotate(-4deg);
+}
+
+.screen-top {
+  height: 13px;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+  margin-bottom: 13px;
+  display: flex;
+  gap: 5px;
+}
+
+.screen-top i {
+  width: 6px;
+  height: 6px;
+  background: #b56aff;
+  border-radius: 50%;
+}
+
+.screen-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 8px;
-  transform: rotate(-3deg);
-  box-shadow: 0 12px 30px rgba(0,0,0,.3);
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  height: 190px;
 }
 
-.mini-kpi {
-  border-radius: 6px;
-  background: rgba(166,123,255,.14);
-  padding: 7px;
+.screen-box {
+  border: 1px solid rgba(178,126,255,.23);
+  background: rgba(125,75,190,.12);
+  border-radius: 7px;
+  padding: 8px;
+  position: relative;
+  overflow: hidden;
 }
 
-.mini-kpi:before {
-  content: "";
-  display: block;
-  width: 55%;
-  height: 4px;
-  border-radius: 5px;
-  background: #a982ff;
-  margin-bottom: 9px;
+.screen-box.wide {
+  grid-column: span 2;
 }
 
-.mini-kpi:after {
-  content: "";
-  display: block;
-  width: 80%;
-  height: 15px;
-  border-radius: 4px;
-  background: rgba(255,255,255,.12);
-}
-
-.mini-chart {
-  grid-column: 1/4;
+.bars {
+  height: 100%;
   display: flex;
   align-items: end;
   gap: 7px;
-  padding: 3px 8px;
+  padding: 10px;
 }
 
-.mini-chart i {
-  display: block;
+.bars i {
   flex: 1;
+  background: linear-gradient(#d27aff,#7054dd);
   border-radius: 4px 4px 0 0;
-  background: linear-gradient(#b18aff,#5d69ce);
 }
 
-.mini-chart i:nth-child(1) {height:35%}
-.mini-chart i:nth-child(2) {height:65%}
-.mini-chart i:nth-child(3) {height:48%}
-.mini-chart i:nth-child(4) {height:85%}
-.mini-chart i:nth-child(5) {height:58%}
-.mini-chart i:nth-child(6) {height:100%}
+.bars i:nth-child(1) {height:35%}
+.bars i:nth-child(2) {height:60%}
+.bars i:nth-child(3) {height:45%}
+.bars i:nth-child(4) {height:80%}
+.bars i:nth-child(5) {height:55%}
+.bars i:nth-child(6) {height:100%}
 
-.logistics .mini-kpi {
-  background: rgba(88,197,255,.12);
+.hellmann .bars i {
+  background: linear-gradient(#65d3ff,#3375b6);
 }
 
-.logistics .mini-kpi:before {
-  background: #68caff;
+.donut {
+  width: 75px;
+  height: 75px;
+  margin: 5px auto;
+  border-radius: 50%;
+  border: 13px solid #9c63f4;
+  border-right-color: #54caff;
+  border-bottom-color: #6b67d8;
 }
 
-.logistics .mini-chart i {
-  background: linear-gradient(#69d1ff,#3976a7);
+.hellmann .donut {
+  border-color: #48bce9;
+  border-right-color: #8b8bff;
+  border-bottom-color: #5b8cce;
 }
 
-.visual-caption {
+.visual-company {
   position: absolute;
-  bottom: 15px;
-  right: 18px;
-  font-size: 9px;
-  color: rgba(235,230,255,.6);
-  letter-spacing: 1px;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 20px;
+  text-shadow: 0 0 20px var(--purple);
+  z-index: 2;
+  white-space: nowrap;
 }
 
-/* CONTENIDO DE LAS RAMAS */
-
-.branch-content {
-  padding: 23px;
+.hellmann .visual-company {
+  text-shadow: 0 0 20px var(--blue);
 }
 
-.branch-top {
+/* CONTENIDO DE LA TARJETA */
+
+.experience-content {
+  padding: 35px 30px 28px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.date {
-  font-size: 10px;
-  color: #c8aaff;
+.company-heading {
+  display: grid;
+  grid-template-columns: 95px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+.company-icon {
+  height: 95px;
+  border: 1px solid rgba(185,125,255,.5);
+  border-radius: 18px;
+  background: linear-gradient(145deg,rgba(120,62,195,.35),rgba(18,20,45,.8));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #d9a5ff;
+  font-size: 35px;
+  box-shadow: inset 0 0 20px rgba(166,96,255,.12);
+}
+
+.hellmann .company-icon {
+  color: var(--blue);
+  border-color: rgba(85,202,255,.45);
+}
+
+.company-icon small {
+  color: white;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  margin-top: 4px;
 }
 
-.sector {
-  font-size: 9px;
-  padding: 6px 10px;
-  border: 1px solid rgba(101,202,255,.23);
-  border-radius: 20px;
-  color: #9bdcff;
-  background: rgba(101,202,255,.05);
-}
-
-.branch-content h3 {
-  font-size: 22px;
+.company-heading h2 {
+  font-size: clamp(19px,2vw,27px);
   line-height: 1.2;
-  margin: 15px 0 5px;
-  letter-spacing: -.5px;
+  margin-bottom: 6px;
 }
 
-.company {
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: .8px;
-  font-weight: 650;
+.company-heading p {
+  color: #d3cde0;
+  font-size: 14px;
 }
 
-.description {
-  font-size: 12px;
-  color: #c3bfd0;
-  line-height: 1.85;
-  margin: 14px 0 18px;
-}
-
-.tool-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin: 0 0 20px;
-}
-
-.tool-tags span {
-  font-size: 9px;
-  color: #dbcaff;
-  background: rgba(168,121,255,.1);
-  border: 1px solid rgba(168,121,255,.17);
+.date-pill {
+  align-self: start;
+  white-space: nowrap;
+  border: 1px solid #bd72ff;
   border-radius: 30px;
-  padding: 6px 9px;
-}
-
-.logistics-card .tool-tags span {
-  color: #b7e8ff;
-  background: rgba(88,197,255,.07);
-  border-color: rgba(88,197,255,.18);
-}
-
-/* DETALLES DESPLEGABLES */
-
-.details-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: rgba(255,255,255,.025);
-  color: #e8ddff;
-  padding: 12px 14px;
+  background: linear-gradient(100deg,#7625bb,#39186f);
+  padding: 9px 14px;
   font-size: 11px;
-  font-weight: 750;
-  cursor: pointer;
-  transition: .2s;
+  font-weight: 800;
+  box-shadow: 0 0 20px rgba(177,88,255,.2);
 }
 
-.details-btn:hover {
-  background: rgba(168,121,255,.1);
-  border-color: rgba(168,121,255,.4);
+.hellmann .date-pill {
+  border-color: #55caff;
+  background: linear-gradient(100deg,#145b91,#183765);
 }
 
-.details-btn span:last-child {
-  font-size: 17px;
-  transition: transform .2s;
+.summary-text {
+  font-size: 13px;
+  color: #d2cddd;
+  line-height: 1.65;
+  margin-top: 9px;
 }
 
-.details-btn[aria-expanded="true"] span:last-child {
-  transform: rotate(180deg);
+/* RESPONSABILIDADES Y HERRAMIENTAS */
+
+.info-grid {
+  border-top: 1px solid rgba(190,160,255,.45);
+  padding-top: 19px;
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  gap: 20px;
 }
 
-.details-panel {
-  display: none;
-  padding: 16px 2px 2px;
+.info-title {
+  font-size: 16px;
+  color: #d68aff;
+  margin-bottom: 13px;
 }
 
-.details-panel.open {
-  display: block;
-  animation: fadeIn .3s ease;
+.hellmann .info-title {
+  color: #72d6ff;
 }
 
-.details-panel ul {
+.responsibilities {
   list-style: none;
   display: grid;
   gap: 11px;
 }
 
-.details-panel li {
+.responsibilities li {
   display: flex;
   gap: 10px;
-  color: #d0ccda;
-  font-size: 11px;
-  line-height: 1.75;
+  align-items: flex-start;
+  color: #e6e1ed;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
-.details-panel li:before {
-  content: "✦";
-  color: var(--purple);
-  flex: 0 0 auto;
+.check {
+  flex: 0 0 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#c16aff,#8062dc);
+  color: #160b27;
+  font-weight: 900;
+  font-size: 12px;
 }
 
-.logistics-card .details-panel li:before {
+.hellmann .check {
+  background: linear-gradient(135deg,#5bd5ff,#477fcb);
+}
+
+.key-tools {
+  border-left: 1px solid rgba(190,160,255,.4);
+  padding-left: 20px;
+}
+
+.key-tools h3 {
   color: var(--blue);
+  font-size: 13px;
+  margin-bottom: 12px;
 }
 
-.bottom-note {
-  text-align: center;
-  color: var(--muted);
+.key-tool {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 36px;
+  padding: 6px 9px;
+  margin-bottom: 7px;
+  border: 1px solid rgba(102,153,255,.4);
+  border-radius: 10px;
+  background: linear-gradient(100deg,rgba(53,74,132,.4),rgba(12,22,48,.8));
   font-size: 11px;
-  margin-top: 35px;
+  font-weight: 700;
 }
 
-@keyframes fadeIn {
-  from {opacity:0;transform:translateY(-5px)}
-  to {opacity:1;transform:translateY(0)}
+.key-tool b {
+  font-size: 17px;
 }
 
-/* PIE */
+/* FLECHAS */
 
-footer {
-  padding: 27px 0;
-  border-top: 1px solid var(--line);
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid #c17aff;
+  color: white;
+  background: rgba(24,15,50,.9);
+  font-size: 32px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(180,100,255,.18);
+  transition: .25s;
+}
+
+.arrow:hover {
+  background: #742ac0;
+  box-shadow: 0 0 30px rgba(180,100,255,.5);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.arrow.prev {
+  left: 0;
+}
+
+.arrow.next {
+  right: 0;
+}
+
+/* INDICADORES */
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 0 28px;
+  color: #d8b5ff;
+  font-size: 14px;
+}
+
+.dot {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 0;
+  background: #45415d;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.dot.active {
+  background: #c04dff;
+  box-shadow: 0 0 17px #c04dff;
+}
+
+.counter {
+  margin-left: 25px;
+  letter-spacing: 2px;
+}
+
+/* HERRAMIENTAS DINÁMICAS */
+
+.tools-panel {
+  border: 1px solid rgba(183,132,255,.65);
+  border-radius: 24px;
+  background: linear-gradient(100deg,rgba(47,29,78,.8),rgba(13,19,43,.92));
+  padding: 20px 25px;
+  display: grid;
+  grid-template-columns: 1.2fr 3fr;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.2);
+}
+
+.tools-heading {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  border-right: 1px solid rgba(190,160,255,.35);
+  padding-right: 20px;
+}
+
+.tools-heading .computer {
+  font-size: 38px;
+  color: #bd8aff;
+}
+
+.tools-heading h3 {
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.tools-heading h3 span {
+  color: #c36aff;
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  justify-content: space-around;
+}
+
+.tool {
+  min-width: 80px;
+  min-height: 83px;
+  border: 1px solid rgba(173,132,255,.45);
+  border-radius: 14px;
+  background: linear-gradient(145deg,rgba(49,43,83,.85),rgba(12,17,38,.9));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 9px;
+  animation: toolIn .35s ease both;
+}
+
+.tool-icon {
+  font-size: 25px;
+}
+
+.tool-name {
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.hellmann-tools .tool {
+  border-color: rgba(85,202,255,.4);
+}
+
+.hellmann-tools .tool-icon {
+  color: #72d6ff;
+}
+
+@keyframes toolIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
   text-align: center;
   color: #777488;
-  font-size: 10px;
-  letter-spacing: .5px;
+  font-size: 11px;
+  padding: 30px 0;
 }
 
-/* ADAPTACIÓN A CELULARES */
+/* RESPONSIVE */
+
+@media(max-width:1050px) {
+  .header-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    max-width: 650px;
+  }
+
+  .experience-card {
+    grid-template-columns: 34% 66%;
+  }
+
+  .company-heading {
+    grid-template-columns: 75px 1fr;
+  }
+
+  .company-icon {
+    height: 75px;
+  }
+
+  .date-pill {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 160px;
+  }
+
+  .tools-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-heading {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 15px;
+  }
+}
 
 @media(max-width:760px) {
-  .branches {
-    grid-template-columns: 1fr;
-    gap: 42px;
-  }
-
-  .branches:before {
-    left: 50%;
-    right: auto;
-    top: -30px;
-    height: calc(100% - 30px);
-    width: 1px;
-    background: linear-gradient(var(--purple),rgba(101,202,255,.25));
-  }
-
-  .branch:before {
-    left: 50%;
-    top: -30px;
-  }
-
-  .branch-card {
-    position: relative;
-    z-index: 1;
-  }
-
-  .tree-root {
-    margin-bottom: 58px;
-  }
-
-  .summary-card {
-    flex: 1;
-    min-width: 125px;
-  }
-}
-
-@media(max-width:680px) {
   .nav-links {
     display: none;
     position: absolute;
-    top: 74px;
+    top: 76px;
     left: 0;
     right: 0;
     padding: 20px 6%;
     background: #0d0c18;
-    border-bottom: 1px solid var(--line);
     flex-direction: column;
   }
 
@@ -623,33 +758,112 @@ footer {
     display: block;
   }
 
-  .page-shell {
-    padding: 48px 0 70px;
+  .carousel-area {
+    padding: 10px 0 0;
   }
 
-  .branch-visual {
-    height: 160px;
+  .arrow {
+    top: 190px;
+    width: 43px;
+    height: 43px;
+    font-size: 25px;
   }
 
-  .branch-content {
-    padding: 19px;
+  .arrow.prev {
+    left: 8px;
+  }
+
+  .arrow.next {
+    right: 8px;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    min-height: 260px;
+  }
+
+  .screen {
+    height: 180px;
+    width: 72%;
+  }
+
+  .screen-grid {
+    height: 120px;
+  }
+
+  .experience-content {
+    padding: 22px 18px;
+  }
+
+  .company-heading {
+    grid-template-columns: 65px 1fr;
+    gap: 12px;
+  }
+
+  .company-icon {
+    height: 65px;
+    font-size: 25px;
+  }
+
+  .company-heading h2 {
+    font-size: 19px;
+  }
+
+  .company-heading p {
+    font-size: 12px;
+  }
+
+  .date-pill {
+    grid-column: 1 / -1;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .key-tools {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 15px 0 0;
+  }
+
+  .key-tool {
+    display: inline-flex;
+    margin-right: 5px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3,1fr);
+    gap: 7px;
+  }
+
+  .stat {
+    min-height: 105px;
+    padding: 10px 5px;
+  }
+
+  .stat strong {
+    font-size: 17px;
+  }
+
+  .stat span:last-child {
+    font-size: 9px;
+  }
+
+  .tools-list {
+    justify-content: flex-start;
+  }
+
+  .tool {
+    min-width: 72px;
+    flex: 1 1 70px;
   }
 
   h1 {
-    letter-spacing: -1.7px;
-  }
-}
-
-@media(prefers-reduced-motion:reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *:before,
-  *:after {
-    animation: none !important;
-    transition: none !important;
+    letter-spacing: -1px;
   }
 }
 </style>
@@ -657,20 +871,12 @@ footer {
 
 <body>
 
-<!-- NAVEGACIÓN -->
-
 <header class="navbar">
   <div class="nav-inner">
 
-    <a class="brand" href="index.html">
-      JAZMIN<span>.</span>
-    </a>
+    <a href="index.html" class="brand">JAZMIN<span>.</span></a>
 
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      aria-expanded="false"
-      type="button">
+    <button class="menu-toggle" id="menuToggle" type="button">
       Menú ☰
     </button>
 
@@ -679,7 +885,7 @@ footer {
       <li><a href="sobre-mi.html">Sobre mí</a></li>
       <li><a href="habilidades.html">Habilidades</a></li>
       <li><a href="proyectos.html">Proyectos</a></li>
-      <li><a class="active" href="experiencia.html">Experiencia</a></li>
+      <li><a href="experiencia.html" class="active">Experiencia</a></li>
       <li><a href="curriculum.html">CV</a></li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
@@ -687,194 +893,174 @@ footer {
   </div>
 </header>
 
-<!-- CONTENIDO -->
-
 <main class="container">
 
-  <div class="page-shell">
+  <section class="header-layout">
 
-    <div class="kicker">
-      04 / TRAYECTORIA
+    <div>
+      <div class="kicker">04 / EXPERIENCIA</div>
+
+      <h1>
+        Mi trayectoria
+        <span class="gradient-text">profesional.</span>
+      </h1>
+
+      <p class="intro">
+        Experiencia en análisis de datos, Business Intelligence,
+        automatización y calidad, con impacto en los sectores
+        financiero y logístico.
+      </p>
     </div>
 
-    <h1>
-      Mi crecimiento
-      <span class="gradient-text">profesional.</span>
-    </h1>
+    <div class="stats">
 
-    <p class="intro">
-      Cada experiencia ha sido una etapa de aprendizaje.
-      Explora las ramas de mi trayectoria y conoce las herramientas,
-      responsabilidades y conocimientos que he desarrollado
-      en los sectores financiero y logístico.
-    </p>
-
-    <!-- INDICADORES -->
-
-    <div class="summary">
-
-      <div class="summary-card">
+      <div class="stat">
+        <div class="stat-icon">♙</div>
         <strong>+1.5 años</strong>
-        <span>Experiencia profesional</span>
+        <span>de experiencia</span>
       </div>
 
-      <div class="summary-card">
+      <div class="stat">
+        <div class="stat-icon">◇</div>
         <strong>2 sectores</strong>
         <span>Financiero y logístico</span>
       </div>
 
-      <div class="summary-card">
+      <div class="stat">
+        <div class="stat-icon">▥</div>
         <strong>Datos + BI</strong>
-        <span>Análisis y automatización</span>
+        <span>Análisis, visualización y automatización</span>
       </div>
 
     </div>
 
-    <!-- ÁRBOL DE TRAYECTORIA -->
+  </section>
 
-    <section class="tree-wrap" aria-label="Árbol de trayectoria profesional">
+  <!-- CARRUSEL DE EMPRESAS -->
 
-      <!-- RAÍZ DEL ÁRBOL -->
+  <section class="carousel-area">
 
-      <div class="tree-root">
+    <button class="arrow prev" id="prevBtn" aria-label="Empresa anterior">
+      ‹
+    </button>
 
-        <div class="root-orb">✦</div>
+    <div class="carousel-window">
 
-        <h2>Jazmin Gallardo Medina</h2>
+      <div class="carousel-track" id="carouselTrack">
 
-        <p>
-          Analista de Datos Jr. | Business Intelligence
-        </p>
+        <!-- EMPRESA 1: INCORP -->
 
-        <div class="root-line"></div>
+        <article class="experience-card">
 
-      </div>
+          <div class="visual">
 
-      <div class="branches">
+            <span class="visual-label">Business Intelligence</span>
 
-        <!-- RAMA INCORP -->
+            <div class="screen">
 
-        <article class="branch">
+              <div class="screen-top">
+                <i></i><i></i><i></i>
+              </div>
 
-          <div class="branch-card">
+              <div class="screen-grid">
 
-            <div class="branch-visual">
+                <div class="screen-box">
+                  <div class="bars">
+                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                  </div>
+                </div>
 
-              <span class="visual-label">
-                Business Intelligence
-              </span>
+                <div class="screen-box">
+                  <div class="donut"></div>
+                </div>
 
-              <div class="visual-dashboard" aria-hidden="true">
-
-                <div class="mini-kpi"></div>
-                <div class="mini-kpi"></div>
-                <div class="mini-kpi"></div>
-
-                <div class="mini-chart">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
+                <div class="screen-box wide">
+                  <div class="bars">
+                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                  </div>
                 </div>
 
               </div>
 
-              <span class="visual-caption">
-                DATA · REPORTING · AUTOMATION
-              </span>
+            </div>
+
+            <div class="visual-company">INCORP</div>
+
+          </div>
+
+          <div class="experience-content">
+
+            <div class="company-heading">
+
+              <div class="company-icon">
+                ▥
+                <small>INCORP</small>
+              </div>
+
+              <div>
+                <h2>Analista de Datos Jr. / Business Intelligence (BI)</h2>
+                <p>INCORP</p>
+                <p class="summary-text">
+                  Desarrollo de soluciones de información para el
+                  seguimiento del negocio, integrando datos,
+                  construyendo indicadores y automatizando procesos.
+                </p>
+              </div>
+
+              <div class="date-pill">
+                Mayo 2026 – Actualidad
+              </div>
 
             </div>
 
-            <div class="branch-content">
+            <div class="info-grid">
 
-              <div class="branch-top">
+              <div>
+                <h3 class="info-title">
+                  ◉ Principales responsabilidades
+                </h3>
 
-                <span class="date">
-                  Mayo 2026 – Actualidad
-                </span>
-
-                <span class="sector">
-                  Financiero
-                </span>
-
-              </div>
-
-              <h3>
-                Analista de Datos Jr. / BI
-              </h3>
-
-              <p class="company">
-                INCORP
-              </p>
-
-              <p class="description">
-                Desarrollo de soluciones de información para el
-                seguimiento del negocio, integrando datos de distintas
-                fuentes, construyendo indicadores y automatizando
-                tareas operativas.
-              </p>
-
-              <div class="tool-tags">
-                <span>SQL</span>
-                <span>PostgreSQL</span>
-                <span>ClicData</span>
-                <span>Power BI</span>
-                <span>Python</span>
-                <span>Excel VBA</span>
-              </div>
-
-              <button
-                class="details-btn"
-                type="button"
-                aria-expanded="false"
-                aria-controls="incorpDetails">
-
-                <span>Explorar responsabilidades</span>
-                <span>⌄</span>
-
-              </button>
-
-              <div class="details-panel" id="incorpDetails">
-
-                <ul>
+                <ul class="responsibilities">
 
                   <li>
-                    Desarrollo y mantenimiento de dashboards ejecutivos
-                    en ClicData, con KPIs para el seguimiento y análisis
-                    del negocio.
+                    <span class="check">✓</span>
+                    Desarrollo y mantenimiento de dashboards en ClicData (KPIs).
                   </li>
 
                   <li>
-                    Extracción, transformación y consolidación de
-                    información de bases de datos, Excel y CSV mediante
-                    SQL en PostgreSQL; consultas con JOIN, CTE y
-                    funciones de ventana.
+                    <span class="check">✓</span>
+                    Consultas y transformación de datos en PostgreSQL
+                    (JOIN, CTE y funciones de ventana).
                   </li>
 
                   <li>
-                    Automatización de la extracción y procesamiento de
-                    estados de cuenta bancarios en PDF mediante Python
-                    y OCR; desarrollo de herramientas internas con
-                    Streamlit.
+                    <span class="check">✓</span>
+                    Automatización de procesos con Python, OCR y Streamlit.
                   </li>
 
                   <li>
-                    Automatización de tareas operativas en Excel con
-                    VBA, incluyendo generación y envío de correos,
-                    gestión de adjuntos y registro de estatus y fechas.
+                    <span class="check">✓</span>
+                    Macros en Excel (VBA) y generación de reportes.
                   </li>
 
                   <li>
-                    Validación, depuración y control de calidad de datos;
-                    elaboración de reportes históricos y mensuales para
-                    identificar inconsistencias, variaciones y tendencias.
+                    <span class="check">✓</span>
+                    Validación y control de calidad de datos.
                   </li>
 
                 </ul>
-
               </div>
+
+              <aside class="key-tools">
+                <h3>⚒ Herramientas clave</h3>
+
+                <div class="key-tool"><b>🐘</b> SQL / PostgreSQL</div>
+                <div class="key-tool"><b>◉</b> ClicData</div>
+                <div class="key-tool"><b>▥</b> Power BI</div>
+                <div class="key-tool"><b>🐍</b> Python</div>
+                <div class="key-tool"><b>▦</b> Excel (VBA)</div>
+
+              </aside>
 
             </div>
 
@@ -882,115 +1068,119 @@ footer {
 
         </article>
 
-        <!-- RAMA HELLMANN -->
+        <!-- EMPRESA 2: HELLMANN -->
 
-        <article class="branch">
+        <article class="experience-card">
 
-          <div class="branch-card logistics-card">
+          <div class="visual hellmann">
 
-            <div class="branch-visual logistics">
+            <span class="visual-label">Calidad y logística</span>
 
-              <span class="visual-label">
-                Calidad y logística
-              </span>
+            <div class="screen">
 
-              <div class="visual-dashboard" aria-hidden="true">
+              <div class="screen-top">
+                <i></i><i></i><i></i>
+              </div>
 
-                <div class="mini-kpi"></div>
-                <div class="mini-kpi"></div>
-                <div class="mini-kpi"></div>
+              <div class="screen-grid">
 
-                <div class="mini-chart">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
+                <div class="screen-box">
+                  <div class="bars">
+                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                  </div>
+                </div>
+
+                <div class="screen-box">
+                  <div class="donut"></div>
+                </div>
+
+                <div class="screen-box wide">
+                  <div class="bars">
+                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                  </div>
                 </div>
 
               </div>
 
-              <span class="visual-caption">
-                QUALITY · AUDIT · TRACEABILITY
-              </span>
+            </div>
+
+            <div class="visual-company">HELLMANN</div>
+
+          </div>
+
+          <div class="experience-content">
+
+            <div class="company-heading">
+
+              <div class="company-icon">
+                ◎
+                <small>HELLMANN</small>
+              </div>
+
+              <div>
+                <h2>Analista de Datos – Calidad</h2>
+                <p>HELLMANN WORLDWIDE LOGISTICS</p>
+                <p class="summary-text">
+                  Análisis de información operativa y soporte a procesos
+                  de auditoría, trazabilidad y mejora continua en
+                  operaciones logísticas.
+                </p>
+              </div>
+
+              <div class="date-pill">
+                Febrero 2025 – Mayo 2026
+              </div>
 
             </div>
 
-            <div class="branch-content">
+            <div class="info-grid">
 
-              <div class="branch-top">
+              <div>
+                <h3 class="info-title">
+                  ◉ Principales responsabilidades
+                </h3>
 
-                <span class="date">
-                  Febrero 2025 – Mayo 2026
-                </span>
-
-                <span class="sector">
-                  Logístico
-                </span>
-
-              </div>
-
-              <h3>
-                Analista de Datos – Calidad
-              </h3>
-
-              <p class="company">
-                HELLMANN WORLDWIDE LOGISTICS
-              </p>
-
-              <p class="description">
-                Análisis de información operativa y soporte a procesos
-                de auditoría, trazabilidad y mejora continua dentro de
-                las operaciones logísticas.
-              </p>
-
-              <div class="tool-tags">
-                <span>Excel</span>
-                <span>Google Forms</span>
-                <span>Auditorías</span>
-                <span>5S</span>
-                <span>8D</span>
-                <span>WMS</span>
-              </div>
-
-              <button
-                class="details-btn"
-                type="button"
-                aria-expanded="false"
-                aria-controls="hellmannDetails">
-
-                <span>Explorar responsabilidades</span>
-                <span>⌄</span>
-
-              </button>
-
-              <div class="details-panel" id="hellmannDetails">
-
-                <ul>
+                <ul class="responsibilities">
 
                   <li>
-                    Análisis de datos operativos y elaboración de
-                    reportes e indicadores en Excel para identificar
-                    tendencias, desviaciones y resultados de auditorías
-                    internas.
+                    <span class="check">✓</span>
+                    Análisis y reportes de indicadores operativos en Excel.
                   </li>
 
                   <li>
-                    Diseño y administración de formularios en Google
-                    Forms para el registro de auditorías, control de
-                    hallazgos y seguimiento de acciones correctivas.
+                    <span class="check">✓</span>
+                    Diseño y administración de formularios en Google Forms
+                    para auditorías y hallazgos.
                   </li>
 
                   <li>
-                    Aplicación y seguimiento de metodologías 5S y 8D,
-                    acciones correctivas y uso de sistemas WMS para
-                    monitorear operaciones logísticas y trazabilidad.
+                    <span class="check">✓</span>
+                    Seguimiento de acciones correctivas y mejora continua.
+                  </li>
+
+                  <li>
+                    <span class="check">✓</span>
+                    Aplicación de metodologías 5S y 8D.
+                  </li>
+
+                  <li>
+                    <span class="check">✓</span>
+                    Uso de WMS para monitoreo de operaciones y trazabilidad.
                   </li>
 
                 </ul>
-
               </div>
+
+              <aside class="key-tools">
+                <h3>⚒ Herramientas clave</h3>
+
+                <div class="key-tool"><b>▦</b> Excel</div>
+                <div class="key-tool"><b>▤</b> Google Forms</div>
+                <div class="key-tool"><b>▣</b> WMS</div>
+                <div class="key-tool"><b>✧</b> 5S</div>
+                <div class="key-tool"><b>◇</b> 8D</div>
+
+              </aside>
 
             </div>
 
@@ -999,37 +1189,196 @@ footer {
         </article>
 
       </div>
+    </div>
 
-    </section>
+    <button class="arrow next" id="nextBtn" aria-label="Empresa siguiente">
+      ›
+    </button>
 
-    <p class="bottom-note">
-      Selecciona “Explorar responsabilidades” en cada rama
-      para conocer más detalles de mi experiencia.
-    </p>
+  </section>
+
+  <!-- INDICADORES DEL CARRUSEL -->
+
+  <div class="carousel-indicators">
+
+    <button class="dot active" data-slide="0" aria-label="Ver INCORP"></button>
+
+    <button class="dot" data-slide="1" aria-label="Ver HELLMANN"></button>
+
+    <span class="counter" id="counter">01 / 02</span>
 
   </div>
 
+  <!-- HERRAMIENTAS QUE CAMBIAN SEGÚN LA EMPRESA -->
+
+  <section class="tools-panel">
+
+    <div class="tools-heading">
+
+      <div class="computer">▣</div>
+
+      <h3>
+        Herramientas utilizadas<br>
+        en <span id="toolsCompany">mi experiencia en INCORP.</span>
+      </h3>
+
+    </div>
+
+    <div class="tools-list" id="toolsList">
+
+      <!-- Se llena dinámicamente con JavaScript -->
+
+    </div>
+
+  </section>
+
 </main>
 
-<footer>
-  © 2026 Jazmin Gallardo Medina · Data Analytics &amp; Business Intelligence
+<footer class="footer">
+  © 2026 Jazmin Gallardo Medina · Data Analytics & Business Intelligence
 </footer>
 
-<!-- FUNCIONES INTERACTIVAS -->
-
 <script>
+
+/* DATOS DE HERRAMIENTAS POR EMPRESA */
+
+const toolsByCompany = [
+
+  {
+    company: "mi experiencia en INCORP.",
+    tools: [
+      { icon: "🐘", name: "PostgreSQL" },
+      { icon: "▥", name: "Power BI" },
+      { icon: "◉", name: "ClicData" },
+      { icon: "▦", name: "Excel" },
+      { icon: "🐍", name: "Python" },
+      { icon: "👑", name: "Streamlit" },
+      { icon: "⚙", name: "VBA" }
+    ]
+  },
+
+  {
+    company: "mi experiencia en HELLMANN.",
+    tools: [
+      { icon: "▦", name: "Excel" },
+      { icon: "▤", name: "Google Forms" },
+      { icon: "▣", name: "WMS" },
+      { icon: "✧", name: "5S" },
+      { icon: "◇", name: "8D" },
+      { icon: "✓", name: "Auditorías" }
+    ]
+  }
+
+];
+
+/* ESTADO DEL CARRUSEL */
+
+let currentSlide = 0;
+
+const track = document.getElementById("carouselTrack");
+const counter = document.getElementById("counter");
+const dots = document.querySelectorAll(".dot");
+const toolsList = document.getElementById("toolsList");
+const toolsCompany = document.getElementById("toolsCompany");
+
+/* CAMBIAR EMPRESA Y HERRAMIENTAS */
+
+function updateCarousel() {
+
+  track.style.transform =
+    `translateX(-${currentSlide * 100}%)`;
+
+  counter.textContent =
+    `0${currentSlide + 1} / 02`;
+
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentSlide);
+  });
+
+  updateTools();
+
+}
+
+/* ACTUALIZAR FRANJA DE HERRAMIENTAS */
+
+function updateTools() {
+
+  const companyData = toolsByCompany[currentSlide];
+
+  toolsCompany.textContent = companyData.company;
+
+  toolsList.innerHTML = "";
+
+  toolsList.classList.toggle(
+    "hellmann-tools",
+    currentSlide === 1
+  );
+
+  companyData.tools.forEach((tool, index) => {
+
+    const item = document.createElement("div");
+
+    item.className = "tool";
+
+    item.style.animationDelay = `${index * 0.06}s`;
+
+    const icon = document.createElement("span");
+    icon.className = "tool-icon";
+    icon.textContent = tool.icon;
+
+    const name = document.createElement("span");
+    name.className = "tool-name";
+    name.textContent = tool.name;
+
+    item.appendChild(icon);
+    item.appendChild(name);
+
+    toolsList.appendChild(item);
+
+  });
+
+}
+
+/* BOTONES ANTERIOR Y SIGUIENTE */
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+
+  currentSlide = (currentSlide + 1) % 2;
+
+  updateCarousel();
+
+});
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+
+  currentSlide = (currentSlide - 1 + 2) % 2;
+
+  updateCarousel();
+
+});
+
+/* CLIC EN LOS INDICADORES */
+
+dots.forEach(dot => {
+
+  dot.addEventListener("click", () => {
+
+    currentSlide = Number(dot.dataset.slide);
+
+    updateCarousel();
+
+  });
+
+});
+
+/* NAVEGACIÓN MÓVIL */
 
 const menuButton = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 menuButton.addEventListener("click", () => {
 
-  const opened = navLinks.classList.toggle("open");
-
-  menuButton.setAttribute(
-    "aria-expanded",
-    String(opened)
-  );
+  navLinks.classList.toggle("open");
 
 });
 
@@ -1041,32 +1390,9 @@ navLinks.querySelectorAll("a").forEach(link => {
 
 });
 
-document.querySelectorAll(".details-btn").forEach(button => {
+/* INICIAR */
 
-  button.addEventListener("click", () => {
-
-    const panel = document.getElementById(
-      button.getAttribute("aria-controls")
-    );
-
-    const opened =
-      button.getAttribute("aria-expanded") === "true";
-
-    button.setAttribute(
-      "aria-expanded",
-      String(!opened)
-    );
-
-    panel.classList.toggle("open", !opened);
-
-    button.querySelector("span:first-child").textContent =
-      opened
-        ? "Explorar responsabilidades"
-        : "Ocultar responsabilidades";
-
-  });
-
-});
+updateCarousel();
 
 </script>
 
