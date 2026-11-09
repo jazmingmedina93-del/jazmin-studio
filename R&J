@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para alguien especial ❤️</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  color: white;
+  text-align: center;
+  background: linear-gradient(135deg, #210d26, #72264e, #c45b83);
+  padding: 20px;
+}
+
+.card {
+  max-width: 520px;
+  padding: 40px 25px;
+  border: 1px solid #ffffff45;
+  border-radius: 25px;
+  background: #ffffff18;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 50px #0005;
+}
+
+.heart {
+  font-size: 65px;
+  animation: latido 1.2s infinite;
+}
+
+h1 { color: #ffd1e4; }
+
+p {
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+button {
+  border: 0;
+  border-radius: 30px;
+  padding: 14px 25px;
+  background: #ffb5d0;
+  color: #571b3a;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#mensaje {
+  display: none;
+  margin-top: 25px;
+  color: #ffe1ed;
+}
+
+@keyframes latido {
+  50% { transform: scale(1.2); }
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <div class="heart">❤️</div>
+  <h1>Para alguien especial</h1>
+
+  <p>
+    No sé cómo explicarlo, pero hay personas
+    que hacen que los días sean más bonitos
+    simplemente estando en ellos.
+  </p>
+
+  <button onclick="mostrarMensaje()">
+    Tengo algo que decirte 💌
+  </button>
+
+  <div id="mensaje">
+    <h2>¡Eres muy especial! 💗</h2>
+    <p>Gracias por formar parte de mi historia.</p>
+  </div>
+</div>
+
+<script>
+function mostrarMensaje() {
+  document.getElementById("mensaje").style.display = "block";
+}
+</script>
+</body>
+</html>
