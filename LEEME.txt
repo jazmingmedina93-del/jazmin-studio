@@ -1,0 +1,8 @@
+PORTAFOLIO MULTIPÁGINA — JAZMIN GALLARDO
+Sube todos los archivos y carpetas a la raíz del repositorio jazmin-studio.
+Páginas: index.html, sobre-mi.html, habilidades.html, proyectos.html, experiencia.html, curriculum.html y contacto.html.
+Cada proyecto tiene su propia página: proyecto-1.html a proyecto-6.html.
+Conserva la carpeta img/fotografia.jpg.
+Para publicar: GitHub > repositorio > Add file > Upload files > subir todo > Commit changes.
+Cuando tengas el CV final, súbelo a la raíz como CV_Jazmin_Gallardo.pdf para activar su descarga.
+Sitio: https://jazmingmedina93-del.github.io/jazmin-studio/
