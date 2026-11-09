@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080810">
 <title>Experiencia | Jazmin Gallardo</title>
 
 <style>
 :root {
   --bg: #080810;
-  --panel: #151329;
   --purple: #b66cff;
   --blue: #55caff;
   --text: #f7f4ff;
@@ -97,6 +97,7 @@ a {
   color: white;
   border-radius: 9px;
   padding: 8px 12px;
+  cursor: pointer;
 }
 
 /* ENCABEZADO */
@@ -212,7 +213,7 @@ h1 {
     0 20px 60px rgba(0,0,0,.35);
 }
 
-/* IMAGEN / ILUSTRACIÓN DE EMPRESA */
+/* IMAGEN DE LA EMPRESA */
 
 .visual {
   min-height: 455px;
@@ -221,36 +222,26 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 30px;
   background:
-    radial-gradient(circle at 50% 35%,rgba(183,76,255,.65),transparent 42%),
+    radial-gradient(circle at 50% 35%,rgba(183,76,255,.48),transparent 48%),
     linear-gradient(145deg,#28124b,#10152c 75%);
 }
 
 .visual.hellmann {
   background:
-    radial-gradient(circle at 50% 35%,rgba(44,165,230,.45),transparent 42%),
+    radial-gradient(circle at 50% 35%,rgba(44,165,230,.38),transparent 48%),
     linear-gradient(145deg,#102d46,#101528 75%);
 }
 
-.visual:before,
-.visual:after {
+.visual:before {
   content: "";
   position: absolute;
-  border-radius: 50%;
-  filter: blur(2px);
-}
-
-.visual:before {
   width: 310px;
   height: 310px;
   border: 1px solid rgba(255,255,255,.16);
+  border-radius: 50%;
   box-shadow: 0 0 60px rgba(180,80,255,.2);
-}
-
-.visual:after {
-  width: 220px;
-  height: 220px;
-  border: 1px solid rgba(255,255,255,.12);
 }
 
 .visual-label {
@@ -269,111 +260,62 @@ h1 {
   color: #a7e5ff;
 }
 
-/* PANTALLA ILUSTRADA */
+/* CONTENEDOR DEL LOGOTIPO O IMAGEN */
 
-.screen {
+.company-image-box {
   z-index: 1;
-  width: 78%;
-  height: 260px;
-  padding: 15px;
-  border: 5px solid #25223c;
-  border-radius: 15px;
-  background: #090d1c;
-  box-shadow: 0 20px 55px rgba(0,0,0,.6);
-  transform: rotate(-4deg);
-}
-
-.screen-top {
-  height: 13px;
-  border-bottom: 1px solid rgba(255,255,255,.13);
-  margin-bottom: 13px;
-  display: flex;
-  gap: 5px;
-}
-
-.screen-top i {
-  width: 6px;
-  height: 6px;
-  background: #b56aff;
-  border-radius: 50%;
-}
-
-.screen-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  height: 190px;
-}
-
-.screen-box {
-  border: 1px solid rgba(178,126,255,.23);
-  background: rgba(125,75,190,.12);
-  border-radius: 7px;
-  padding: 8px;
   position: relative;
+  width: 88%;
+  height: 285px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: rgba(255,255,255,.94);
+  box-shadow:
+    0 20px 55px rgba(0,0,0,.45),
+    0 0 35px rgba(183,100,255,.2);
+  transform: rotate(-2deg);
   overflow: hidden;
 }
 
-.screen-box.wide {
-  grid-column: span 2;
+.hellmann .company-image-box {
+  background: rgba(255,255,255,.97);
+  box-shadow:
+    0 20px 55px rgba(0,0,0,.45),
+    0 0 35px rgba(85,202,255,.2);
 }
 
-.bars {
+.company-image {
+  width: 100%;
   height: 100%;
-  display: flex;
-  align-items: end;
-  gap: 7px;
-  padding: 10px;
+  object-fit: contain;
+  display: block;
 }
 
-.bars i {
-  flex: 1;
-  background: linear-gradient(#d27aff,#7054dd);
-  border-radius: 4px 4px 0 0;
+/* ALTERNATIVA SI TODAVÍA NO SUBES LAS IMÁGENES */
+
+.image-fallback {
+  display: none;
+  text-align: center;
+  color: #17152b;
+  width: 100%;
 }
 
-.bars i:nth-child(1) {height:35%}
-.bars i:nth-child(2) {height:60%}
-.bars i:nth-child(3) {height:45%}
-.bars i:nth-child(4) {height:80%}
-.bars i:nth-child(5) {height:55%}
-.bars i:nth-child(6) {height:100%}
-
-.hellmann .bars i {
-  background: linear-gradient(#65d3ff,#3375b6);
-}
-
-.donut {
-  width: 75px;
-  height: 75px;
-  margin: 5px auto;
-  border-radius: 50%;
-  border: 13px solid #9c63f4;
-  border-right-color: #54caff;
-  border-bottom-color: #6b67d8;
-}
-
-.hellmann .donut {
-  border-color: #48bce9;
-  border-right-color: #8b8bff;
-  border-bottom-color: #5b8cce;
-}
-
-.visual-company {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+.image-fallback strong {
+  display: block;
+  font-size: 25px;
   font-weight: 900;
   letter-spacing: 2px;
-  font-size: 20px;
-  text-shadow: 0 0 20px var(--purple);
-  z-index: 2;
-  white-space: nowrap;
 }
 
-.hellmann .visual-company {
-  text-shadow: 0 0 20px var(--blue);
+.image-fallback span {
+  display: block;
+  font-size: 11px;
+  margin-top: 8px;
+  color: #55516a;
+  letter-spacing: 1px;
 }
 
 /* CONTENIDO DE LA TARJETA */
@@ -430,6 +372,13 @@ h1 {
   font-size: 14px;
 }
 
+.summary-text {
+  font-size: 13px;
+  color: #d2cddd;
+  line-height: 1.65;
+  margin-top: 9px;
+}
+
 .date-pill {
   align-self: start;
   white-space: nowrap;
@@ -445,13 +394,6 @@ h1 {
 .hellmann .date-pill {
   border-color: #55caff;
   background: linear-gradient(100deg,#145b91,#183765);
-}
-
-.summary-text {
-  font-size: 13px;
-  color: #d2cddd;
-  line-height: 1.65;
-  margin-top: 9px;
 }
 
 /* RESPONSABILIDADES Y HERRAMIENTAS */
@@ -688,6 +630,8 @@ h1 {
   }
 }
 
+/* PIE */
+
 .footer {
   text-align: center;
   color: #777488;
@@ -785,13 +729,9 @@ h1 {
     min-height: 260px;
   }
 
-  .screen {
-    height: 180px;
-    width: 72%;
-  }
-
-  .screen-grid {
-    height: 120px;
+  .company-image-box {
+    height: 190px;
+    width: 75%;
   }
 
   .experience-content {
@@ -954,37 +894,23 @@ h1 {
 
           <div class="visual">
 
-            <span class="visual-label">Business Intelligence</span>
+            <span class="visual-label">Experiencia profesional</span>
 
-            <div class="screen">
+            <div class="company-image-box">
 
-              <div class="screen-top">
-                <i></i><i></i><i></i>
-              </div>
+              <img
+                class="company-image"
+                src="img/incorp.png"
+                alt="Imagen o logotipo de INCORP"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              >
 
-              <div class="screen-grid">
-
-                <div class="screen-box">
-                  <div class="bars">
-                    <i></i><i></i><i></i><i></i><i></i><i></i>
-                  </div>
-                </div>
-
-                <div class="screen-box">
-                  <div class="donut"></div>
-                </div>
-
-                <div class="screen-box wide">
-                  <div class="bars">
-                    <i></i><i></i><i></i><i></i><i></i><i></i>
-                  </div>
-                </div>
-
+              <div class="image-fallback">
+                <strong>INCORP</strong>
+                <span>MI EXPERIENCIA PROFESIONAL</span>
               </div>
 
             </div>
-
-            <div class="visual-company">INCORP</div>
 
           </div>
 
@@ -1000,6 +926,7 @@ h1 {
               <div>
                 <h2>Analista de Datos Jr. / Business Intelligence (BI)</h2>
                 <p>INCORP</p>
+
                 <p class="summary-text">
                   Desarrollo de soluciones de información para el
                   seguimiento del negocio, integrando datos,
@@ -1052,11 +979,12 @@ h1 {
               </div>
 
               <aside class="key-tools">
+
                 <h3>⚒ Herramientas clave</h3>
 
                 <div class="key-tool"><b>🐘</b> SQL / PostgreSQL</div>
                 <div class="key-tool"><b>◉</b> ClicData</div>
-                <div class="key-tool"><b>▥</b> Power BI</div>
+                <div class="key-tool"><b>⚡</b> Power Query</div>
                 <div class="key-tool"><b>🐍</b> Python</div>
                 <div class="key-tool"><b>▦</b> Excel (VBA)</div>
 
@@ -1074,37 +1002,23 @@ h1 {
 
           <div class="visual hellmann">
 
-            <span class="visual-label">Calidad y logística</span>
+            <span class="visual-label">Experiencia profesional</span>
 
-            <div class="screen">
+            <div class="company-image-box">
 
-              <div class="screen-top">
-                <i></i><i></i><i></i>
-              </div>
+              <img
+                class="company-image"
+                src="img/hellmann.png"
+                alt="Imagen o logotipo de Hellmann Worldwide Logistics"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              >
 
-              <div class="screen-grid">
-
-                <div class="screen-box">
-                  <div class="bars">
-                    <i></i><i></i><i></i><i></i><i></i><i></i>
-                  </div>
-                </div>
-
-                <div class="screen-box">
-                  <div class="donut"></div>
-                </div>
-
-                <div class="screen-box wide">
-                  <div class="bars">
-                    <i></i><i></i><i></i><i></i><i></i><i></i>
-                  </div>
-                </div>
-
+              <div class="image-fallback">
+                <strong>HELLMANN</strong>
+                <span>WORLDWIDE LOGISTICS</span>
               </div>
 
             </div>
-
-            <div class="visual-company">HELLMANN</div>
 
           </div>
 
@@ -1120,6 +1034,7 @@ h1 {
               <div>
                 <h2>Analista de Datos – Calidad</h2>
                 <p>HELLMANN WORLDWIDE LOGISTICS</p>
+
                 <p class="summary-text">
                   Análisis de información operativa y soporte a procesos
                   de auditoría, trazabilidad y mejora continua en
@@ -1172,6 +1087,7 @@ h1 {
               </div>
 
               <aside class="key-tools">
+
                 <h3>⚒ Herramientas clave</h3>
 
                 <div class="key-tool"><b>▦</b> Excel</div>
@@ -1224,11 +1140,7 @@ h1 {
 
     </div>
 
-    <div class="tools-list" id="toolsList">
-
-      <!-- Se llena dinámicamente con JavaScript -->
-
-    </div>
+    <div class="tools-list" id="toolsList"></div>
 
   </section>
 
@@ -1240,7 +1152,7 @@ h1 {
 
 <script>
 
-/* DATOS DE HERRAMIENTAS POR EMPRESA */
+/* HERRAMIENTAS DE CADA EMPRESA */
 
 const toolsByCompany = [
 
@@ -1248,8 +1160,8 @@ const toolsByCompany = [
     company: "mi experiencia en INCORP.",
     tools: [
       { icon: "🐘", name: "PostgreSQL" },
-      { icon: "▥", name: "Power BI" },
       { icon: "◉", name: "ClicData" },
+      { icon: "⚡", name: "Power Query" },
       { icon: "▦", name: "Excel" },
       { icon: "🐍", name: "Python" },
       { icon: "👑", name: "Streamlit" },
@@ -1281,7 +1193,7 @@ const dots = document.querySelectorAll(".dot");
 const toolsList = document.getElementById("toolsList");
 const toolsCompany = document.getElementById("toolsCompany");
 
-/* CAMBIAR EMPRESA Y HERRAMIENTAS */
+/* CAMBIAR EMPRESA */
 
 function updateCarousel() {
 
@@ -1291,15 +1203,20 @@ function updateCarousel() {
   counter.textContent =
     `0${currentSlide + 1} / 02`;
 
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === currentSlide);
+  dots.forEach((dot,index) => {
+
+    dot.classList.toggle(
+      "active",
+      index === currentSlide
+    );
+
   });
 
   updateTools();
 
 }
 
-/* ACTUALIZAR FRANJA DE HERRAMIENTAS */
+/* CAMBIAR HERRAMIENTAS */
 
 function updateTools() {
 
@@ -1314,7 +1231,7 @@ function updateTools() {
     currentSlide === 1
   );
 
-  companyData.tools.forEach((tool, index) => {
+  companyData.tools.forEach((tool,index) => {
 
     const item = document.createElement("div");
 
@@ -1339,9 +1256,9 @@ function updateTools() {
 
 }
 
-/* BOTONES ANTERIOR Y SIGUIENTE */
+/* BOTÓN SIGUIENTE */
 
-document.getElementById("nextBtn").addEventListener("click", () => {
+document.getElementById("nextBtn").addEventListener("click",() => {
 
   currentSlide = (currentSlide + 1) % 2;
 
@@ -1349,7 +1266,9 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 
 });
 
-document.getElementById("prevBtn").addEventListener("click", () => {
+/* BOTÓN ANTERIOR */
+
+document.getElementById("prevBtn").addEventListener("click",() => {
 
   currentSlide = (currentSlide - 1 + 2) % 2;
 
@@ -1357,11 +1276,11 @@ document.getElementById("prevBtn").addEventListener("click", () => {
 
 });
 
-/* CLIC EN LOS INDICADORES */
+/* INDICADORES */
 
 dots.forEach(dot => {
 
-  dot.addEventListener("click", () => {
+  dot.addEventListener("click",() => {
 
     currentSlide = Number(dot.dataset.slide);
 
@@ -1371,12 +1290,12 @@ dots.forEach(dot => {
 
 });
 
-/* NAVEGACIÓN MÓVIL */
+/* MENÚ MÓVIL */
 
 const menuButton = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuButton.addEventListener("click", () => {
+menuButton.addEventListener("click",() => {
 
   navLinks.classList.toggle("open");
 
@@ -1384,13 +1303,15 @@ menuButton.addEventListener("click", () => {
 
 navLinks.querySelectorAll("a").forEach(link => {
 
-  link.addEventListener("click", () => {
+  link.addEventListener("click",() => {
+
     navLinks.classList.remove("open");
+
   });
 
 });
 
-/* INICIAR */
+/* INICIAR CARRUSEL */
 
 updateCarousel();
 
