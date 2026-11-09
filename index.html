@@ -1,960 +1,581 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Jazmin Gallardo | Data Analyst</title>
-
-  <style>
-    :root{
-      --bg:#050506;
-      --panel:#101014;
-      --panel2:#15151c;
-      --text:#f7f7fb;
-      --muted:#a7a7b3;
-      --line:#242430;
-      --purple:#9b5cff;
-      --blue:#58a6ff;
-    }
-
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(155,92,255,.14), transparent 25%),
-        radial-gradient(circle at left 30%, rgba(88,166,255,.08), transparent 25%),
-        var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    nav{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 7%;
-      background:rgba(5,5,6,.82);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid var(--line);
-    }
-
-    .brand{
-      font-weight:800;
-      letter-spacing:.5px;
-      font-size:20px;
-    }
-
-    .brand span{
-      color:var(--purple);
-    }
-
-    nav ul{
-      display:flex;
-      gap:26px;
-      list-style:none;
-    }
-
-    nav li a{
-      color:var(--muted);
-      transition:.3s;
-      font-size:14px;
-    }
-
-    nav li a:hover{
-      color:white;
-    }
-
-    .hero{
-      min-height:92vh;
-      display:grid;
-      grid-template-columns:1.3fr .7fr;
-      align-items:center;
-      gap:50px;
-      padding:90px 7%;
-    }
-
-    .hero-tag{
-      color:var(--purple);
-      text-transform:uppercase;
-      letter-spacing:3px;
-      font-size:13px;
-      margin-bottom:18px;
-    }
-
-    .hero h1{
-      font-size:clamp(52px,7vw,90px);
-      line-height:.95;
-      margin-bottom:22px;
-    }
-
-    .hero h1 span{
-      display:block;
-      background:linear-gradient(90deg,var(--purple),var(--blue));
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-
-    .hero h2{
-      color:#dadade;
-      font-size:26px;
-      margin-bottom:20px;
-      font-weight:500;
-    }
-
-    .hero p{
-      color:var(--muted);
-      max-width:700px;
-      font-size:18px;
-      line-height:1.7;
-    }
-
-    .hero-buttons{
-      margin-top:32px;
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:14px 22px;
-      border-radius:10px;
-      background:linear-gradient(90deg,var(--purple),#7047ff);
-      font-weight:700;
-      border:1px solid transparent;
-      transition:.25s;
-      display:inline-block;
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 10px 28px rgba(155,92,255,.25);
-    }
-
-    .btn.alt{
-      background:transparent;
-      border:1px solid var(--line);
-      color:#ddd;
-    }
-
-    .hero-card{
-      background:linear-gradient(180deg,#121218,#0c0c10);
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:28px;
-      position:relative;
-      overflow:hidden;
-      box-shadow:0 30px 80px rgba(0,0,0,.35);
-    }
-
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      width:220px;
-      height:220px;
-      background:var(--purple);
-      filter:blur(120px);
-      opacity:.18;
-      right:-70px;
-      top:-70px;
-    }
-
-    .stat{
-      margin-bottom:22px;
-    }
-
-    .stat strong{
-      display:block;
-      font-size:34px;
-      color:white;
-    }
-
-    .stat span{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    section{
-      padding:100px 7%;
-    }
-
-    .section-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:end;
-      gap:30px;
-      margin-bottom:45px;
-    }
-
-    .section-head h2{
-      font-size:42px;
-    }
-
-    .section-head p{
-      color:var(--muted);
-      max-width:620px;
-    }
-
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-    }
-
-    .panel{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:30px;
-    }
-
-    .panel p{
-      color:var(--muted);
-      line-height:1.8;
-    }
-
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
-
-    .skill{
-      padding:12px 16px;
-      border-radius:999px;
-      background:#111117;
-      border:1px solid var(--line);
-      color:#ddd;
-      transition:.2s;
-    }
-
-    .skill:hover{
-      border-color:var(--purple);
-      color:white;
-      transform:translateY(-2px);
-    }
-
-    .carousel-wrap{
-      position:relative;
-    }
-
-    .carousel{
-      display:flex;
-      gap:22px;
-      overflow-x:auto;
-      scroll-behavior:smooth;
-      scrollbar-width:none;
-      padding:5px 2px 12px;
-    }
-
-    .carousel::-webkit-scrollbar{
-      display:none;
-    }
-
-    .project{
-      min-width:340px;
-      max-width:340px;
-      background:linear-gradient(180deg,var(--panel2),#0d0d12);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:26px;
-      transition:.3s;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .project:hover{
-      transform:translateY(-6px);
-      border-color:#3b3b4b;
-      box-shadow:0 20px 50px rgba(0,0,0,.25);
-    }
-
-    .project-number{
-      font-size:12px;
-      color:var(--purple);
-      letter-spacing:2px;
-      margin-bottom:18px;
-    }
-
-    .project h3{
-      font-size:23px;
-      margin-bottom:14px;
-    }
-
-    .project p{
-      color:var(--muted);
-      line-height:1.7;
-      min-height:150px;
-    }
-
-    .tags{
-      margin-top:18px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-
-    .tag{
-      font-size:12px;
-      padding:7px 10px;
-      border-radius:999px;
-      background:#191922;
-      color:#c9c9d3;
-    }
-
-    .carousel-controls{
-      display:flex;
-      gap:10px;
-      margin-top:22px;
-    }
-
-    .circle-btn{
-      width:46px;
-      height:46px;
-      border-radius:50%;
-      border:1px solid var(--line);
-      background:#101015;
-      color:white;
-      cursor:pointer;
-      font-size:18px;
-      transition:.2s;
-    }
-
-    .circle-btn:hover{
-      border-color:var(--purple);
-      transform:translateY(-2px);
-    }
-
-    .timeline{
-      border-left:1px solid #2c2c35;
-      margin-left:10px;
-      padding-left:30px;
-    }
-
-    .timeline-item{
-      margin-bottom:34px;
-      position:relative;
-    }
-
-    .timeline-item::before{
-      content:"";
-      width:12px;
-      height:12px;
-      border-radius:50%;
-      background:var(--purple);
-      position:absolute;
-      left:-37px;
-      top:7px;
-      box-shadow:0 0 22px rgba(155,92,255,.8);
-    }
-
-    .timeline-item h3{
-      margin-bottom:8px;
-    }
-
-    .timeline-item p{
-      color:var(--muted);
-      line-height:1.7;
-    }
-
-    .contact{
-      background:linear-gradient(135deg,#111119,#09090d);
-      border-top:1px solid var(--line);
-    }
-
-    .contact-box{
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:45px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:30px;
-      flex-wrap:wrap;
-    }
-
-    .contact-box p{
-      color:var(--muted);
-      margin-top:10px;
-    }
-
-    footer{
-      padding:30px 7%;
-      border-top:1px solid var(--line);
-      color:#777;
-      font-size:13px;
-      text-align:center;
-    }
-
-    @media(max-width:900px){
-      .hero{
-        grid-template-columns:1fr;
-      }
-
-      .about-grid{
-        grid-template-columns:1fr;
-      }
-
-      nav ul{
-        display:none;
-      }
-
-      .section-head{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-    }
-
-    @media(max-width:600px){
-      section{
-        padding:75px 6%;
-      }
-
-      .hero{
-        padding:70px 6%;
-      }
-
-      .project{
-        min-width:88vw;
-        max-width:88vw;
-      }
-
-      .hero h2{
-        font-size:21px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080810">
+<meta name="description" content="Portafolio profesional de Jazmin Gallardo. Analista de Datos Jr. Especializada en SQL, Power BI, Excel y automatización.">
+<title>Jazmin Gallardo | Data Analyst</title>
+
+<style>
+:root {
+  --bg:#080810;
+  --panel:#11111c;
+  --panel2:#171725;
+  --text:#f7f7fb;
+  --muted:#aaaaba;
+  --line:#29293b;
+  --purple:#a36aff;
+  --blue:#55b4ff;
+  --gradient:linear-gradient(110deg,#a36aff,#55b4ff);
+}
+
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
+body {
+  font-family:Inter,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 85% 5%,#8c43e01d,transparent 28%),
+    radial-gradient(circle at 5% 40%,#328bff12,transparent 25%),
+    var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+a {color:inherit;text-decoration:none}
+button {font:inherit}
+.container {width:min(1120px,88%);margin:auto}
+nav {
+  position:sticky;top:0;z-index:100;
+  background:#080810eF;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner {
+  width:min(1120px,88%);margin:auto;
+  min-height:72px;display:flex;
+  justify-content:space-between;align-items:center;
+}
+.logo {font-size:22px;font-weight:800;letter-spacing:-1px}
+.logo span,.gradient-text {
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.nav-links {display:flex;gap:25px;list-style:none}
+.nav-links a {font-size:13px;color:var(--muted);transition:.2s}
+.nav-links a:hover {color:var(--purple)}
+.menu-btn {
+  display:none;background:none;border:1px solid var(--line);
+  color:white;border-radius:8px;padding:9px 12px;
+}
+.hero {
+  min-height:690px;display:grid;
+  grid-template-columns:1.25fr .75fr;
+  align-items:center;gap:55px;padding:90px 0;
+}
+.eyebrow {
+  color:var(--purple);font-size:12px;
+  letter-spacing:3px;text-transform:uppercase;
+  font-weight:700;margin-bottom:20px;
+}
+.hero h1 {
+  font-size:clamp(48px,7vw,82px);
+  line-height:1.02;letter-spacing:-3px;
+  margin-bottom:20px;
+}
+.hero h2 {font-size:24px;font-weight:500;color:#d5d3e1;margin-bottom:20px}
+.hero-description {
+  color:var(--muted);font-size:17px;
+  line-height:1.8;max-width:650px;
+}
+.buttons {display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn {
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:9px;padding:13px 20px;border-radius:9px;
+  font-weight:700;font-size:13px;transition:.25s;
+  border:1px solid transparent;cursor:pointer;
+}
+.btn-primary {background:var(--gradient);color:#080810}
+.btn-secondary {border-color:var(--line);background:var(--panel);color:white}
+.btn:hover {transform:translateY(-3px);filter:brightness(1.13)}
+.profile-wrap {display:flex;justify-content:center;position:relative}
+.profile-frame {
+  width:310px;height:370px;padding:3px;
+  background:var(--gradient);border-radius:25px;
+  box-shadow:0 20px 80px #945aff25;
+}
+.profile-frame img {
+  width:100%;height:100%;object-fit:cover;
+  border-radius:23px;background:var(--panel);
+}
+.profile-caption {
+  position:absolute;bottom:-18px;left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;background:var(--panel2);
+  border:1px solid var(--line);padding:12px 20px;
+  border-radius:10px;font-size:12px;
+}
+.profile-caption span {color:var(--purple)}
+section {padding:90px 0}
+.section-heading {margin-bottom:38px}
+.section-heading h2 {font-size:36px;letter-spacing:-1px;margin-bottom:12px}
+.section-heading p {color:var(--muted);line-height:1.7;max-width:700px}
+.section-tag {color:var(--purple);font-size:11px;letter-spacing:3px;margin-bottom:12px}
+.grid-two {display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel {
+  padding:30px;background:var(--panel);
+  border:1px solid var(--line);border-radius:17px;
+}
+.panel h3 {font-size:20px;margin-bottom:17px}
+.panel p {color:var(--muted);font-size:14px;line-height:1.9}
+.skills-grid {
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+}
+.skill-box {
+  padding:22px;background:var(--panel);
+  border:1px solid var(--line);border-radius:14px;
+  transition:.25s;
+}
+.skill-box:hover,.project:hover {border-color:#8759c9;transform:translateY(-4px)}
+.skill-box h3 {font-size:15px;margin-bottom:12px}
+.skill-box p {color:var(--muted);font-size:13px;line-height:1.9}
+.skill-icon {font-size:24px;margin-bottom:12px}
+.project-grid {
+  display:grid;grid-template-columns:repeat(2,1fr);gap:22px;
+}
+.project {
+  background:linear-gradient(150deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);border-radius:17px;
+  padding:25px;transition:.25s;display:flex;flex-direction:column;
+}
+.project-number {font-size:12px;color:var(--purple);letter-spacing:2px;margin-bottom:13px}
+.project h3 {font-size:21px;margin-bottom:13px}
+.project p {color:var(--muted);font-size:13px;line-height:1.8}
+.project-image {
+  height:175px;background:#0b0b14;border:1px dashed #48405f;
+  border-radius:11px;margin:18px 0;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  color:#89859c;font-size:12px;text-align:center;
+}
+.project-image img {width:100%;height:100%;object-fit:cover}
+.tags {display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag {
+  padding:7px 10px;background:#222034;
+  border:1px solid #35304c;border-radius:30px;
+  color:#d0b9ff;font-size:11px;
+}
+.project-action {margin-top:auto;padding-top:20px}
+.project-action a {color:var(--blue);font-size:12px}
+.timeline {border-left:1px solid #49405e;margin-left:10px;padding-left:30px}
+.timeline-item {position:relative;margin-bottom:35px}
+.timeline-item:before {
+  content:"";position:absolute;left:-37px;top:4px;
+  width:12px;height:12px;border-radius:50%;
+  background:var(--purple);box-shadow:0 0 15px var(--purple);
+}
+.timeline-item h3 {font-size:18px;margin-bottom:8px}
+.timeline-item p {color:var(--muted);font-size:14px;line-height:1.8}
+.cv-section {
+  background:linear-gradient(120deg,#171125,#101421);
+  border:1px solid #39304e;border-radius:20px;
+  padding:40px;display:flex;align-items:center;
+  justify-content:space-between;gap:25px;
+}
+.cv-section p {color:var(--muted);font-size:14px;line-height:1.8}
+.contact-section {
+  background:linear-gradient(130deg,#141021,#101725);
+  border:1px solid var(--line);border-radius:20px;padding:40px;
+}
+.contact-grid {
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px;
+}
+.contact-item {
+  background:#ffffff08;border:1px solid var(--line);
+  padding:17px;border-radius:11px;font-size:13px;
+  overflow-wrap:anywhere;
+}
+.contact-item span {display:block;color:var(--muted);margin-bottom:7px}
+.contact-item a {color:#c7a7ff}
+footer {
+  border-top:1px solid var(--line);padding:28px 0;
+  text-align:center;color:#858395;font-size:12px;
+}
+#cvButton.disabled {opacity:.65;cursor:not-allowed}
+@media(max-width:800px) {
+  .hero {grid-template-columns:1fr;text-align:center;gap:65px}
+  .hero-description {margin:auto}
+  .buttons {justify-content:center}
+  .profile-wrap {grid-row:1}
+  .profile-frame {width:245px;height:290px}
+  .grid-two,.project-grid {grid-template-columns:1fr}
+  .cv-section {flex-direction:column;align-items:flex-start}
+}
+@media(max-width:650px) {
+  .nav-links {
+    display:none;position:absolute;top:72px;left:0;width:100%;
+    background:#10101a;padding:20px 6%;
+    flex-direction:column;border-bottom:1px solid var(--line);
+  }
+  .nav-links.open {display:flex}
+  .menu-btn {display:block}
+  .hero h1 {font-size:51px}
+  .hero h2 {font-size:20px}
+  .hero-description {font-size:15px}
+  section {padding:65px 0}
+  .section-heading h2 {font-size:29px}
+  .skills-grid,.contact-grid {grid-template-columns:1fr}
+  .panel,.project,.cv-section,.contact-section {padding:23px}
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-  <div class="brand">Jazmin<span>.</span>Data</div>
-
-  <ul>
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#sobre-mi">Sobre mí</a></li>
-    <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#experiencia">Experiencia</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
+  <div class="nav-inner">
+    <a href="#inicio" class="logo">Jazmin<span>.Data</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
 </nav>
 
+<main>
+<div class="container">
+
 <section class="hero" id="inicio">
-
   <div>
-
-    <div class="hero-tag">
-      Data Analyst Portfolio
-    </div>
-
-    <h1>
-      Jazmin
-      <span>Gallardo</span>
-    </h1>
-
-    <h2>
-      Analista de Datos Jr
-    </h2>
-
-    <p>
-      Transformo datos en información útil, automatizo procesos
-      y desarrollo soluciones que ayudan a analizar, visualizar
-      y tomar decisiones con mayor claridad.
+    <p class="eyebrow">Data Analyst · Business Intelligence</p>
+    <h1>Jazmin <span class="gradient-text">Gallardo</span></h1>
+    <h2>Analista de Datos Jr.</h2>
+    <p class="hero-description">
+      Transformo datos en información útil mediante análisis,
+      visualización y automatización de procesos. Desarrollo
+      soluciones para organizar información, optimizar tareas
+      y facilitar la toma de decisiones.
     </p>
-
-    <div class="hero-buttons">
-
-      <a class="btn" href="#proyectos">
-        Ver proyectos
-      </a>
-
-      <a
-        class="btn alt"
-        href="https://www.linkedin.com/in/jazmin-gallardo-3899a9262"
-        target="_blank">
-        LinkedIn
-      </a>
-
-      <a
-        class="btn alt"
-        href="https://github.com/jazmingmedina93-del/jazmin-studio"
-        target="_blank">
-        GitHub
-      </a>
-
+    <div class="buttons">
+      <a href="#proyectos" class="btn btn-primary">Explorar proyectos ↗</a>
+      <a href="#curriculum" class="btn btn-secondary">Mi currículum ↓</a>
+      <a href="https://www.linkedin.com/in/jazmin-gallardo-3899a9262"
+         target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn ↗</a>
     </div>
-
   </div>
 
-  <div class="hero-card">
-
-    <div class="stat">
-      <strong>SQL</strong>
-      <span>
-        Consultas, joins, ventanas, análisis y transformación
-      </span>
+  <div class="profile-wrap">
+    <div class="profile-frame">
+      <!-- Guarda tu fotografía en la carpeta img con este nombre -->
+      <img src="img/fotografia.jpg"
+           alt="Fotografía profesional de Jazmin Gallardo">
     </div>
-
-    <div class="stat">
-      <strong>Power BI</strong>
-      <span>
-        Dashboards, análisis visual e indicadores
-      </span>
+    <div class="profile-caption">
+      <span>●</span> Data Analytics & Automation
     </div>
-
-    <div class="stat">
-      <strong>Automation</strong>
-      <span>
-        Excel, VBA, Python y optimización de procesos
-      </span>
-    </div>
-
   </div>
-
 </section>
 
 <section id="sobre-mi">
-
-  <div class="section-head">
-
-    <div>
-      <p class="hero-tag">
-        Perfil
-      </p>
-
-      <h2>
-        Sobre mí
-      </h2>
-    </div>
-
-    <p>
-      Mi enfoque combina análisis de datos,
-      automatización, visualización y mejora de procesos.
-    </p>
-
+  <div class="section-heading">
+    <p class="section-tag">01 / PERFIL PROFESIONAL</p>
+    <h2>Sobre mí</h2>
+    <p>Análisis de datos, tecnología y mejora de procesos.</p>
   </div>
 
-  <div class="about-grid">
-
+  <div class="grid-two">
     <div class="panel">
-
-      <h3>
-        Perfil profesional
-      </h3>
-
-      <br>
-
+      <h3>Perfil profesional</h3>
       <p>
-        Soy Analista de Datos Jr con experiencia
-        trabajando con información financiera,
-        bases de datos, visualización
-        y automatización de procesos.
+        Soy Analista de Datos Jr. con experiencia en el manejo
+        de información financiera y operativa, consulta de bases
+        de datos, visualización de indicadores y automatización
+        de procesos.
       </p>
-
       <br>
-
       <p>
-        Me interesa convertir datos en información útil
-        y transformar tareas manuales
-        en soluciones más rápidas,
-        ordenadas y confiables.
+        Me enfoco en transformar información en soluciones
+        estructuradas, mejorar procesos manuales y desarrollar
+        herramientas que faciliten el análisis y la interpretación
+        de datos.
       </p>
-
     </div>
-
     <div class="panel">
-
-      <h3>
-        Herramientas
-      </h3>
-
+      <h3>Mi enfoque</h3>
+      <p>
+        Combino pensamiento analítico, lógica de negocio y
+        herramientas tecnológicas para trabajar con información
+        desde su extracción y limpieza hasta su análisis y
+        presentación.
+      </p>
       <br>
-
-      <div class="skills">
-
-        <div class="skill">SQL</div>
-        <div class="skill">Excel</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Power Query</div>
-        <div class="skill">PostgreSQL</div>
-        <div class="skill">VBA</div>
-        <div class="skill">Python</div>
-        <div class="skill">Streamlit</div>
-        <div class="skill">SAP</div>
-
-      </div>
-
+      <p>
+        Mi interés profesional está orientado al análisis de datos,
+        Business Intelligence, bases de datos y automatización.
+      </p>
     </div>
+  </div>
+</section>
 
+<section id="habilidades">
+  <div class="section-heading">
+    <p class="section-tag">02 / TECNOLOGÍA</p>
+    <h2>Herramientas y habilidades</h2>
+    <p>Herramientas que utilizo para desarrollar soluciones de datos.</p>
   </div>
 
+  <div class="skills-grid">
+    <div class="skill-box">
+      <div class="skill-icon">▤</div>
+      <h3>Bases de datos</h3>
+      <p>SQL · PostgreSQL · SAP Business One · Consultas · JOIN · CTE · Funciones de ventana</p>
+    </div>
+    <div class="skill-box">
+      <div class="skill-icon">▥</div>
+      <h3>Business Intelligence</h3>
+      <p>Power BI · ClicData · Dashboards · Indicadores · Visualización de información</p>
+    </div>
+    <div class="skill-box">
+      <div class="skill-icon">▦</div>
+      <h3>Análisis de información</h3>
+      <p>Excel · Power Query · Tablas dinámicas · BUSCARX · SUMAR.SI.CONJUNTO</p>
+    </div>
+    <div class="skill-box">
+      <div class="skill-icon">⌘</div>
+      <h3>Automatización</h3>
+      <p>Python · Pandas · VBA · Streamlit · OCR · Procesamiento de archivos</p>
+    </div>
+  </div>
 </section>
 
 <section id="proyectos">
-
-  <div class="section-head">
-
-    <div>
-
-      <p class="hero-tag">
-        Evidencias
-      </p>
-
-      <h2>
-        Proyectos de análisis y visualización
-      </h2>
-
-    </div>
-
+  <div class="section-heading">
+    <p class="section-tag">03 / PORTAFOLIO</p>
+    <h2>Proyectos destacados</h2>
     <p>
-      Proyectos desarrollados para analizar información,
-      identificar patrones, automatizar procesos
-      y presentar resultados de forma visual.
+      Evidencias de análisis, visualización, consultas y automatización.
+      Las imágenes de cada proyecto podrán incorporarse posteriormente.
     </p>
-
   </div>
 
-  <div class="carousel-wrap">
+  <div class="project-grid">
 
-    <div class="carousel" id="carousel">
+    <article class="project">
+      <div class="project-number">PROYECTO 01</div>
+      <h3>Dashboard de nacimientos en México</h3>
+      <p>
+        Dashboard desarrollado en Power BI para analizar la cantidad
+        de nacimientos en México mediante indicadores y visualizaciones
+        que facilitan la interpretación de la información.
+      </p>
+      <div class="project-image">Espacio para captura del dashboard</div>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">Análisis</span><span class="tag">Visualización</span></div>
+    </article>
 
-      <article class="project">
+    <article class="project">
+      <div class="project-number">PROYECTO 02</div>
+      <h3>Dashboard de ventas</h3>
+      <p>
+        Análisis del comportamiento de ventas para identificar
+        productos con mayor volumen de venta y presentar información
+        mediante indicadores y gráficas.
+      </p>
+      <div class="project-image">Espacio para captura del dashboard</div>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">Ventas</span><span class="tag">KPIs</span></div>
+    </article>
 
-        <div class="project-number">
-          01
-        </div>
+    <article class="project">
+      <div class="project-number">PROYECTO 03</div>
+      <h3>Automatización de correos</h3>
+      <p>
+        Desarrollo de una solución en Excel y VBA para generar
+        y enviar correos mediante Outlook, con control de estatus,
+        fechas de envío, imágenes y archivos adjuntos.
+      </p>
+      <div class="project-image">Espacio para captura de Excel y VBA</div>
+      <div class="tags"><span class="tag">Excel</span><span class="tag">VBA</span><span class="tag">Outlook</span></div>
+    </article>
 
-        <h3>
-          Dashboard de nacimientos en México
-        </h3>
+    <article class="project">
+      <div class="project-number">PROYECTO 04</div>
+      <h3>Proyección de incrementos de renta</h3>
+      <p>
+        Desarrollo de lógica para proyectar incrementos de renta
+        considerando fechas, porcentajes, periodos anuales
+        e información de clientes.
+      </p>
+      <div class="project-image">Espacio para captura de consultas y resultados</div>
+      <div class="tags"><span class="tag">SQL</span><span class="tag">Excel</span><span class="tag">ClicData</span></div>
+    </article>
 
-        <p>
-          Dashboard desarrollado en Power BI
-          para analizar la cantidad de niños nacidos en México,
-          utilizando indicadores y visualizaciones
-          para facilitar la interpretación de la información.
-        </p>
+    <article class="project">
+      <div class="project-number">PROYECTO 05</div>
+      <h3>Extractor de estados de cuenta</h3>
+      <p>
+        Aplicación para procesar estados de cuenta bancarios en PDF,
+        extraer movimientos, limpiar información y generar archivos
+        Excel estructurados mediante técnicas de OCR.
+      </p>
+      <div class="project-image">Espacio para captura de la aplicación Streamlit</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">OCR</span><span class="tag">Pandas</span><span class="tag">Streamlit</span></div>
+    </article>
 
-        <div class="tags">
-          <span class="tag">Power BI</span>
-          <span class="tag">Análisis de datos</span>
-          <span class="tag">Visualización</span>
-        </div>
-
-      </article>
-
-      <article class="project">
-
-        <div class="project-number">
-          02
-        </div>
-
-        <h3>
-          Dashboard de ventas de una tienda
-        </h3>
-
-        <p>
-          Dashboard desarrollado en Power BI
-          para analizar el comportamiento de ventas
-          e identificar cuáles son los productos
-          con mayor volumen de venta.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Power BI</span>
-          <span class="tag">Ventas</span>
-          <span class="tag">Productos</span>
-          <span class="tag">Visualización</span>
-        </div>
-
-      </article>
-
-      <article class="project">
-
-        <div class="project-number">
-          03
-        </div>
-
-        <h3>
-          Automatización de correos
-        </h3>
-
-        <p>
-          Automatización en Excel para generar
-          y enviar correos masivos mediante Outlook,
-          incluyendo imágenes, archivos adjuntos,
-          control de estatus y fecha de envío.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Excel</span>
-          <span class="tag">VBA</span>
-          <span class="tag">Outlook</span>
-        </div>
-
-      </article>
-
-      <article class="project">
-
-        <div class="project-number">
-          04
-        </div>
-
-        <h3>
-          Proyección de incrementos de renta
-        </h3>
-
-        <p>
-          Desarrollo de lógica para proyectar
-          incrementos de renta utilizando fechas,
-          porcentajes, periodos anuales
-          y datos de clientes.
-        </p>
-
-        <div class="tags">
-          <span class="tag">SQL</span>
-          <span class="tag">Excel</span>
-          <span class="tag">ClicData</span>
-        </div>
-
-      </article>
-
-      <article class="project">
-
-        <div class="project-number">
-          05
-        </div>
-
-        <h3>
-          Extractor de estados de cuenta
-        </h3>
-
-        <p>
-          Desarrollo de una aplicación
-          para convertir estados de cuenta bancarios
-          en PDF a archivos Excel estructurados,
-          realizando extracción, limpieza
-          y clasificación de movimientos.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">OCR</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">Streamlit</span>
-        </div>
-
-      </article>
-
-      <article class="project">
-
-        <div class="project-number">
-          06
-        </div>
-
-        <h3>
-          Análisis de clientes sin pago
-        </h3>
-
-        <p>
-          Análisis para identificar clientes
-          sin registro de pago durante determinados periodos,
-          utilizando cruces de información
-          y consultas de bases de datos.
-        </p>
-
-        <div class="tags">
-          <span class="tag">SQL</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Análisis</span>
-        </div>
-
-      </article>
-
-    </div>
-
-    <div class="carousel-controls">
-
-      <button
-        class="circle-btn"
-        onclick="moverCarrusel(-1)">
-        ←
-      </button>
-
-      <button
-        class="circle-btn"
-        onclick="moverCarrusel(1)">
-        →
-      </button>
-
-    </div>
+    <article class="project">
+      <div class="project-number">PROYECTO 06</div>
+      <h3>Análisis de clientes sin pago</h3>
+      <p>
+        Consultas y cruces de información para identificar clientes
+        sin registro de pago en determinados periodos y facilitar
+        el seguimiento de la información.
+      </p>
+      <div class="project-image">Espacio para captura del resultado SQL</div>
+      <div class="tags"><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">Análisis</span></div>
+    </article>
 
   </div>
-
 </section>
 
 <section id="experiencia">
-
-  <div class="section-head">
-
-    <div>
-
-      <p class="hero-tag">
-        Trayectoria
-      </p>
-
-      <h2>
-        Experiencia y enfoque
-      </h2>
-
-    </div>
-
+  <div class="section-heading">
+    <p class="section-tag">04 / TRAYECTORIA</p>
+    <h2>Experiencia y capacidades</h2>
+    <p>Áreas de trabajo y soluciones desarrolladas.</p>
   </div>
 
   <div class="timeline">
-
     <div class="timeline-item">
-
-      <h3>
-        Análisis de datos
-      </h3>
-
+      <h3>Analista de Datos Jr.</h3>
       <p>
-        Limpieza, análisis y transformación de información
-        para apoyar procesos operativos y financieros.
+        Análisis y transformación de información financiera
+        y operativa, consultas SQL, desarrollo de indicadores
+        y visualización mediante herramientas de Business Intelligence.
       </p>
-
     </div>
-
     <div class="timeline-item">
-
-      <h3>
-        Visualización
-      </h3>
-
+      <h3>Automatización de procesos</h3>
       <p>
-        Desarrollo de dashboards e indicadores
-        para presentar información de manera
-        clara y comprensible.
+        Desarrollo de soluciones con Excel, VBA y Python para
+        simplificar tareas manuales y procesar información.
       </p>
-
     </div>
-
     <div class="timeline-item">
-
-      <h3>
-        Automatización
-      </h3>
-
+      <h3>Gestión y análisis de bases de datos</h3>
       <p>
-        Desarrollo de soluciones para reducir tareas manuales
-        utilizando Excel, VBA y Python.
-      </p>
-
-    </div>
-
-    <div class="timeline-item">
-
-      <h3>
-        Bases de datos
-      </h3>
-
-      <p>
-        Consulta, análisis y transformación de datos
+        Consultas, cruces, validación y transformación de información
         utilizando SQL y PostgreSQL.
       </p>
-
     </div>
-
-  </div>
-
-</section>
-
-<section class="contact" id="contacto">
-
-  <div class="contact-box">
-
-    <div>
-
-      <p class="hero-tag">
-        Contacto
-      </p>
-
-      <h2>
-        Conectemos
-      </h2>
-
+    <div class="timeline-item">
+      <h3>Visualización de información</h3>
       <p>
-        Puedes conocer más sobre mi experiencia
-        y mis proyectos en LinkedIn y GitHub.
+        Desarrollo de dashboards e indicadores para presentar
+        información de forma clara y apoyar su interpretación.
       </p>
-
     </div>
+  </div>
+</section>
 
-    <div class="hero-buttons">
-
-      <a
-        class="btn"
-        href="https://www.linkedin.com/in/jazmin-gallardo-3899a9262"
-        target="_blank">
-        LinkedIn
-      </a>
-
-      <a
-        class="btn alt"
-        href="https://github.com/jazmingmedina93-del/jazmin-studio"
-        target="_blank">
-        GitHub
-      </a>
-
-      <a
-        class="btn alt"
-        href="mailto:TU_CORREO">
-        Correo
-      </a>
-
-    </div>
-
+<section id="curriculum">
+  <div class="section-heading">
+    <p class="section-tag">05 / DOCUMENTACIÓN</p>
+    <h2>Mi currículum</h2>
+    <p>Consulta mi perfil y trayectoria profesional en formato PDF.</p>
   </div>
 
+  <div class="cv-section">
+    <div>
+      <h3 style="font-size:23px;margin-bottom:12px">CV · Jazmin Gallardo</h3>
+      <p id="cvStatus">Currículum profesional en preparación.</p>
+    </div>
+    <a href="./CV_Jazmin_Gallardo.pdf"
+       id="cvButton"
+       class="btn btn-primary disabled"
+       aria-disabled="true">
+       CV próximamente
+    </a>
+  </div>
 </section>
+
+<section id="contacto">
+  <div class="contact-section">
+    <p class="section-tag">06 / CONTACTO</p>
+    <h2 style="font-size:36px;margin-bottom:12px">Conectemos</h2>
+    <p style="color:var(--muted);line-height:1.8">
+      Estoy interesada en oportunidades profesionales relacionadas
+      con análisis de datos, Business Intelligence y automatización.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span>Teléfono</span>
+        <a href="tel:+525568064125">55 6806 4125</a>
+      </div>
+      <div class="contact-item">
+        <span>Correo electrónico</span>
+        <a href="mailto:galmedjaz@hotmail.com">galmedjaz@hotmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span>LinkedIn</span>
+        <a href="https://www.linkedin.com/in/jazmin-gallardo-3899a9262" target="_blank" rel="noopener">Ver perfil ↗</a>
+      </div>
+      <div class="contact-item">
+        <span>GitHub</span>
+        <a href="https://github.com/jazmingmedina93-del/jazmin-studio" target="_blank" rel="noopener">Ver repositorio ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
 
 <footer>
   © 2026 Jazmin Gallardo · Data Analyst Portfolio
 </footer>
 
 <script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-  function moverCarrusel(direccion){
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
 
-    const carrusel =
-      document.getElementById("carousel");
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
 
-    carrusel.scrollBy({
-      left: direccion * 365,
-      behavior: "smooth"
-    });
+// Comprobar si existe el CV en GitHub Pages.
+async function comprobarCV() {
+  const boton = document.getElementById("cvButton");
+  const estado = document.getElementById("cvStatus");
+  const ruta = "./CV_Jazmin_Gallardo.pdf";
 
+  try {
+    const respuesta = await fetch(ruta, {method:"HEAD"});
+    if (respuesta.ok) {
+      boton.textContent = "↓ Descargar currículum PDF";
+      boton.classList.remove("disabled");
+      boton.removeAttribute("aria-disabled");
+      boton.setAttribute("download", "CV_Jazmin_Gallardo.pdf");
+      estado.textContent = "Consulta y descarga mi currículum profesional actualizado.";
+    } else {
+      boton.textContent = "CV próximamente";
+      boton.classList.add("disabled");
+      boton.setAttribute("aria-disabled", "true");
+      estado.textContent = "Mi currículum se encuentra en preparación.";
+    }
+  } catch (error) {
+    boton.textContent = "CV próximamente";
+    boton.classList.add("disabled");
+    boton.setAttribute("aria-disabled", "true");
   }
+}
 
+document.getElementById("cvButton").addEventListener("click", event => {
+  if (event.currentTarget.getAttribute("aria-disabled") === "true") {
+    event.preventDefault();
+  }
+});
+
+comprobarCV();
 </script>
 
 </body>
